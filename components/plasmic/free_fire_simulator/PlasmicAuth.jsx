@@ -193,14 +193,14 @@ function PlasmicAuth__RenderFunc(props) {
               </AuthButton>
             </div>
           </Stack__>
-          {/* <Embed
+          <Embed
             data-plasmic-name={"embedHtml"}
             data-plasmic-override={overrides.embedHtml}
             className={classNames("__wab_instance", sty.embedHtml)}
             code={
               '<iframe src="https://player.vimeo.com/video/1021208209?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-width: 100%; min-height: 100%; object-fit: cover; filter: brightness(50%); overflow: hidden;"> </iframe>'
             }
-          /> */}
+          />
 
           {(
             hasVariant(globalVariants, "desktopBase", "desktopOnly")
