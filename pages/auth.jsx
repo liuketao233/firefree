@@ -23,6 +23,35 @@ function Auth() {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
+  const handleButtonClick = () => {
+    // console.log(url, title, "onclick  google auth");
+    const url = "/google-signin";
+    const title = "Sample Sign In";
+    const dualScreenLeft = window.screenLeft ?? window.screenX;
+    const dualScreenTop = window.screenTop ?? window.screenY;
+
+    const width =
+      window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+
+    const height =
+      window.innerHeight ??
+      document.documentElement.clientHeight ??
+      screen.height;
+
+    const systemZoom = width / window.screen.availWidth;
+
+    const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
+    const top = (height - 550) / 2 / systemZoom + dualScreenTop;
+
+    const newWindow = window.open(
+      url,
+      title,
+      `width=${500 / systemZoom},height=${550 / systemZoom
+      },top=${top},left=${left}`
+    );
+
+    newWindow?.focus();
+  };
   return (
     <GlobalContextsProvider>
       <PageParamsProvider__
@@ -30,7 +59,9 @@ function Auth() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicAuth />
+        <PlasmicAuth  overrides={{
+          onClickAuthButton:handleButtonClick
+        }}/>
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
