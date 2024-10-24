@@ -7,7 +7,6 @@ import { PlasmicGame } from "../components/plasmic/free_fire_simulator/PlasmicGa
 import { PlasmicAuth } from "../components/plasmic/free_fire_simulator/PlasmicAuth";
 import { useRouter } from "next/router";
 import { useSession, signOut } from "next-auth/react";
-import AuthButton from "../components/AuthButton";
 
 function Game() {
   const { data: session, status } = useSession();
@@ -64,7 +63,7 @@ function Game() {
         query={useRouter()?.query}
       >
         {status === "authenticated" ? <PlasmicGame /> : <PlasmicAuth overrides={{
-          AuthButton:{
+          authButton:{
             props:{
               onclick : handleButtonClick
             }
