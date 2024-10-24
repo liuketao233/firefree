@@ -24,7 +24,7 @@ function Auth() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const handleButtonClick = () => {
-    // console.log(url, title, "onclick  google auth");
+    console.log(url, title, "onclick  google auth");
     const url = "/google-signin";
     const title = "Sample Sign In";
     const dualScreenLeft = window.screenLeft ?? window.screenX;
