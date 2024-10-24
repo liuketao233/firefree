@@ -1,0 +1,26 @@
+{
+  "name": "firefree",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@plasmicapp/react-web": "^0.2.353",
+    "@plasmicpkgs/antd5": "^0.0.253",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.230",
+    "antd": "^5.21.5",
+    "mongodb": "^6.10.0",
+    "next": "15.0.1",
+    "next-auth": "^4.24.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.1"
+  }
+}
