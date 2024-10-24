@@ -77,6 +77,33 @@ function PlasmicAuth__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+  const popupCenter = (url, title) => {
+    console.log(url, title, "onclick  google auth");
+    const dualScreenLeft = window.screenLeft ?? window.screenX;
+    const dualScreenTop = window.screenTop ?? window.screenY;
+
+    const width =
+      window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+
+    const height =
+      window.innerHeight ??
+      document.documentElement.clientHeight ??
+      screen.height;
+
+    const systemZoom = width / window.screen.availWidth;
+
+    const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
+    const top = (height - 550) / 2 / systemZoom + dualScreenTop;
+
+    const newWindow = window.open(
+      url,
+      title,
+      `width=${500 / systemZoom},height=${550 / systemZoom
+      },top=${top},left=${left}`
+    );
+
+    newWindow?.focus();
+  };
   return (
     <React.Fragment>
       <Head></Head>
@@ -144,7 +171,7 @@ function PlasmicAuth__RenderFunc(props) {
               </Trans__>
             </h1>
             <div className={classNames(projectcss.all, sty.freeBox__dwDkh)}>
-              <AuthButton onClick={overrides.onClickAuthButton}
+              <AuthButton onClick={() => popupCenter("/google-signin", "Sample Sign In")}
                 data-plasmic-name={"authButton"}
                 data-plasmic-override={overrides.authButton}
                 className={classNames("__wab_instance", sty.authButton)}
