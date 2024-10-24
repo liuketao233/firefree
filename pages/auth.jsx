@@ -30,7 +30,14 @@ function Auth() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicAuth />
+        <PlasmicAuth overrides={{
+          authButton:{
+            style:{
+              zIndex:99,
+              pointerEvents:"auto"
+            }
+          }
+        }}/>
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );

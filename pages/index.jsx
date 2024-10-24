@@ -33,7 +33,14 @@ function Game() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        {status === "authenticated" ? <PlasmicGame /> : <PlasmicAuth />}
+        {status === "authenticated" ? <PlasmicGame /> : <PlasmicAuth  overrides={{
+          authButton:{
+            style:{
+              zIndex:99,
+              pointerEvents:"auto"
+            }
+          }
+        }}/>}
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );
