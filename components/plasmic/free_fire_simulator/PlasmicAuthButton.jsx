@@ -18,7 +18,6 @@ import {
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants,
   hasVariant,
   renderPlasmicSlot,
   useCurrentUser,
@@ -29,7 +28,6 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import * as pp from "@plasmicapp/react-web";
 import Divider from "../../Divider"; // plasmic-import: MAHszRYQZTQZ/component
-import { useScreenVariants as useScreenVariants_2BvNreuf1Eto } from "./PlasmicGlobalVariant__DesktopBase"; // plasmic-import: 2BVNreuf1ETO/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
@@ -144,9 +142,6 @@ function PlasmicAuthButton__RenderFunc(props) {
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
-  const globalVariants = ensureGlobalVariants({
-    desktopBase: useScreenVariants_2BvNreuf1Eto()
-  });
   return (
     <Stack__
       as={"button"}
@@ -225,14 +220,7 @@ function PlasmicAuthButton__RenderFunc(props) {
       )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
-      {(
-        hasVariant($state, "showStartIcon", "showStartIcon") &&
-        hasVariant(globalVariants, "desktopBase", "desktopOnly")
-          ? true
-          : hasVariant($state, "showStartIcon", "showStartIcon")
-          ? true
-          : false
-      ) ? (
+      {(hasVariant($state, "showStartIcon", "showStartIcon") ? true : false) ? (
         <div
           data-plasmic-name={"startIconContainer"}
           data-plasmic-override={overrides.startIconContainer}

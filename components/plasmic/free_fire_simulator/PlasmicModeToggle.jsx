@@ -124,13 +124,12 @@ function PlasmicModeToggle__RenderFunc(props) {
           data-plasmic-override={overrides.toggleButton}
           className={classNames(projectcss.all, sty.toggleButton)}
         >
-          {false ? (
-            <div
-              data-plasmic-name={"frame"}
-              data-plasmic-override={overrides.frame}
-              className={classNames(projectcss.all, sty.frame)}
-            />
-          ) : null}
+          <div
+            data-plasmic-name={"frame"}
+            data-plasmic-override={overrides.frame}
+            className={classNames(projectcss.all, sty.frame)}
+          />
+
           <div
             data-plasmic-name={"frame2"}
             data-plasmic-override={overrides.frame2}

@@ -11,23 +11,18 @@
 import * as React from "react";
 import { useRouter } from "next/router";
 import {
-  PlasmicIcon as PlasmicIcon__,
   Stack as Stack__,
   Trans as Trans__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
   ensureGlobalVariants,
-  generateStateOnChangeProp,
-  generateStateValueProp,
   hasVariant,
   useCurrentUser,
-  useDollarState,
   usePlasmicTranslator
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Divider from "../../Divider"; // plasmic-import: MAHszRYQZTQZ/component
-import TextInput from "../../TextInput"; // plasmic-import: OwAPyM2I9Q1G/component
 import AuthButton from "../../AuthButton"; // plasmic-import: x4yE4ZG-E551/component
 import { useScreenVariants as useScreenVariants_2BvNreuf1Eto } from "./PlasmicGlobalVariant__DesktopBase"; // plasmic-import: 2BVNreuf1ETO/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -35,9 +30,6 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: ncwW2Qgif2pGwQDF81hXqa/projectcss
 import sty from "./PlasmicSignUpPromptDesktop.module.css"; // plasmic-import: lfoX2K6g2IqZ/css
-import CheckSvgIcon from "./icons/PlasmicIcon__CheckSvg"; // plasmic-import: 8EZZlspBuF5Y/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: jEgug0HHkt8v/icon
-import Icon7Icon from "./icons/PlasmicIcon__Icon7"; // plasmic-import: -zMzL6eeYIYp/icon
 
 createPlasmicElementProxy;
 
@@ -76,36 +68,6 @@ function PlasmicSignUpPromptDesktop__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const currentUser = useCurrentUser?.() || {};
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "textInput.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "textInput2.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      },
-      {
-        path: "textInput3.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ""
-      }
-    ],
-
-    [$props, $ctx, $refs]
-  );
-  const $state = useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries: {},
-    $refs
-  });
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
@@ -134,15 +96,6 @@ function PlasmicSignUpPromptDesktop__RenderFunc(props) {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__k13Fe)}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__mSp6A
-            )}
-          >
-            <Trans__>{"Sign up with"}</Trans__>
-          </div>
           <div className={classNames(projectcss.all, sty.freeBox__ztcvy)}>
             <div
               className={classNames(
@@ -175,80 +128,68 @@ function PlasmicSignUpPromptDesktop__RenderFunc(props) {
                 }
               </Trans__>
             </div>
-            {(
-              hasVariant(globalVariants, "desktopBase", "desktopOnly")
-                ? true
-                : false
-            ) ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___6OEx
-                )}
-              >
-                <Trans__>
-                  {
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <h4
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h4,
-                            projectcss.__wab_text,
-                            sty.h4__oz7Tn
-                          )}
-                        >
-                          {
-                            "\ud83d\udd25 \u6587\u672c\u5360\u4f4d\u7b26\uff0c\u9884\u8ba11\u884c"
-                          }
-                        </h4>
-                      }
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___6OEx
+              )}
+            >
+              <Trans__>
+                {
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__oz7Tn
+                        )}
+                      >
+                        {
+                          "\ud83d\udd25 \u6587\u672c\u5360\u4f4d\u7b26\uff0c\u9884\u8ba11\u884c"
+                        }
+                      </h4>
+                    }
 
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  }
-                </Trans__>
-              </div>
-            ) : null}
-            {(
-              hasVariant(globalVariants, "desktopBase", "desktopOnly")
-                ? true
-                : false
-            ) ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__c7D52
-                )}
-              >
-                <Trans__>
-                  {
-                    <React.Fragment>
-                      <React.Fragment>{""}</React.Fragment>
-                      {
-                        <h4
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h4,
-                            projectcss.__wab_text,
-                            sty.h4__mfLGu
-                          )}
-                        >
-                          {
-                            "\ud83d\udd25 \u6587\u672c\u5360\u4f4d\u7b26\uff0c\u9884\u8ba11\u884c"
-                          }
-                        </h4>
-                      }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                }
+              </Trans__>
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__c7D52
+              )}
+            >
+              <Trans__>
+                {
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h4
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h4,
+                          projectcss.__wab_text,
+                          sty.h4__mfLGu
+                        )}
+                      >
+                        {
+                          "\ud83d\udd25 \u6587\u672c\u5360\u4f4d\u7b26\uff0c\u9884\u8ba11\u884c"
+                        }
+                      </h4>
+                    }
 
-                      <React.Fragment>{""}</React.Fragment>
-                    </React.Fragment>
-                  }
-                </Trans__>
-              </div>
-            ) : null}
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                }
+              </Trans__>
+            </div>
           </div>
           <Stack__
             as={"div"}
@@ -278,132 +219,23 @@ function PlasmicSignUpPromptDesktop__RenderFunc(props) {
               className={classNames("__wab_instance", sty.divider__bMr8Y)}
             />
           </Stack__>
-          <Stack__
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___6GedO)}
-          >
-            <TextInput
-              data-plasmic-name={"textInput"}
-              data-plasmic-override={overrides.textInput}
-              className={classNames("__wab_instance", sty.textInput)}
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["textInput", "value"])(
-                  (e => e.target?.value).apply(null, eventArgs)
-                );
-              }}
-              placeholder={"Full Name"}
-              value={
-                generateStateValueProp($state, ["textInput", "value"]) ?? ""
-              }
-            />
-
-            <TextInput
-              data-plasmic-name={"textInput2"}
-              data-plasmic-override={overrides.textInput2}
-              className={classNames("__wab_instance", sty.textInput2)}
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["textInput2", "value"])(
-                  (e => e.target?.value).apply(null, eventArgs)
-                );
-              }}
-              placeholder={"Email"}
-              value={
-                generateStateValueProp($state, ["textInput2", "value"]) ?? ""
-              }
-            />
-
-            <TextInput
-              data-plasmic-name={"textInput3"}
-              data-plasmic-override={overrides.textInput3}
-              className={classNames("__wab_instance", sty.textInput3)}
-              onChange={(...eventArgs) => {
-                generateStateOnChangeProp($state, ["textInput3", "value"])(
-                  (e => e.target?.value).apply(null, eventArgs)
-                );
-              }}
-              placeholder={"Password"}
-              value={
-                generateStateValueProp($state, ["textInput3", "value"]) ?? ""
-              }
-            />
-          </Stack__>
           <AuthButton
             data-plasmic-name={"authButton"}
             data-plasmic-override={overrides.authButton}
             className={classNames("__wab_instance", sty.authButton)}
-            color={undefined}
-            endIcon={
-              <Icon7Icon
-                className={classNames(projectcss.all, sty.svg___9Q4Rp)}
-                role={"img"}
-              />
-            }
-            showStartIcon={
-              hasVariant(globalVariants, "desktopBase", "desktopOnly")
-                ? true
-                : undefined
-            }
-            startIcon={
-              <PlasmicIcon__
-                PlasmicIconType={
-                  hasVariant(globalVariants, "desktopBase", "desktopOnly")
-                    ? IconIcon
-                    : CheckSvgIcon
-                }
-                className={classNames(projectcss.all, sty.svg__r1I0P)}
-                role={"img"}
-              />
-            }
-            submitsForm={true}
+            showStartIcon={true}
+            submitsForm={false}
           >
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__sR9I
+                sty.text__x0LB
               )}
             >
-              <Trans__>
-                {hasVariant(globalVariants, "desktopBase", "desktopOnly")
-                  ? "\u4f7f\u7528Google\u4e00\u952e\u767b\u5f55"
-                  : "Button"}
-              </Trans__>
+              <Trans__>{"\u4f7f\u7528Google\u4e00\u952e\u767b\u5f55"}</Trans__>
             </div>
           </AuthButton>
-          {(
-            hasVariant(globalVariants, "desktopBase", "desktopOnly")
-              ? true
-              : false
-          ) ? (
-            <AuthButton
-              data-plasmic-name={"authButton2"}
-              data-plasmic-override={overrides.authButton2}
-              className={classNames("__wab_instance", sty.authButton2)}
-              link={`/`}
-              showStartIcon={true}
-              size={"compact"}
-              startIcon={
-                <IconIcon
-                  className={classNames(projectcss.all, sty.svg__e4Kvh)}
-                  role={"img"}
-                />
-              }
-              submitsForm={false}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___4Txak
-                )}
-              >
-                <Trans__>
-                  {"\u4f7f\u7528Google\u4e00\u952e\u767b\u5f55"}
-                </Trans__>
-              </div>
-            </AuthButton>
-          ) : null}
         </Stack__>
         <Divider className={classNames("__wab_instance", sty.divider__lzKs5)} />
         <div className={classNames(projectcss.all, sty.freeBox__pktfI)}>
@@ -427,20 +259,8 @@ function PlasmicSignUpPromptDesktop__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "textInput",
-    "textInput2",
-    "textInput3",
-    "authButton",
-    "authButton2"
-  ],
-
-  textInput: ["textInput"],
-  textInput2: ["textInput2"],
-  textInput3: ["textInput3"],
-  authButton: ["authButton"],
-  authButton2: ["authButton2"]
+  root: ["root", "authButton"],
+  authButton: ["authButton"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -475,11 +295,7 @@ export const PlasmicSignUpPromptDesktop = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    textInput: makeNodeComponent("textInput"),
-    textInput2: makeNodeComponent("textInput2"),
-    textInput3: makeNodeComponent("textInput3"),
     authButton: makeNodeComponent("authButton"),
-    authButton2: makeNodeComponent("authButton2"),
     // Metadata about props expected for PlasmicSignUpPromptDesktop
     internalVariantProps: PlasmicSignUpPromptDesktop__VariantProps,
     internalArgProps: PlasmicSignUpPromptDesktop__ArgProps

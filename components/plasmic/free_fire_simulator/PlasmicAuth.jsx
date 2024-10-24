@@ -187,7 +187,7 @@ function PlasmicAuth__RenderFunc(props) {
                   )}
                 >
                   <Trans__>
-                    {"\u4f7f\u7528\u8c37\u6b4c\u4e00\u952e\u767b\u5f55"}
+                    {"\u4f7f\u7528Google\u4e00\u952e\u767b\u5f55"}
                   </Trans__>
                 </div>
               </AuthButton>

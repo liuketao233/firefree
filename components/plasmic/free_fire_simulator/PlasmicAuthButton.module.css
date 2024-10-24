@@ -104,10 +104,10 @@
   padding: 6px;
 }
 .root___focusVisibleWithin {
-  box-shadow: 0px 0px 0px 3px #96c7f2;
+  box-shadow: 0px 0px 0px 3px #ffffffd9;
 }
 .root:focus-within {
-  box-shadow: 0px 0px 0px 3px #96c7f2;
+  box-shadow: 0px 0px 0px 3px #ffffffd9;
 }
 .root:hover {
   background: #282826;
@@ -203,11 +203,6 @@
 .startIconContainershowStartIcon {
   display: flex;
 }
-@media (min-width: 600px) {
-  .startIconContainershowStartIcon {
-    display: flex;
-  }
-}
 .slotTargetStartIcon {
   color: #ededec;
   font-size: 1.5em;
@@ -259,11 +254,6 @@
 .dividershowStartIcon:global(.__wab_instance) {
   flex-shrink: 0;
   display: block;
-}
-@media (min-width: 600px) {
-  .dividershowStartIcon:global(.__wab_instance) {
-    flex-shrink: 0;
-  }
 }
 .contentContainer {
   display: flex;
