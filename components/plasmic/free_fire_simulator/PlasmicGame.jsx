@@ -66,8 +66,13 @@ function PlasmicGame__RenderFunc(props) {
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
-    console.log(isVisible, "isVisible");
-    Profile_instance = '';
+    console.log(isModalVisible, "isVisible");
+    if(isModalVisible == true){
+      Profile_instance = '';
+    }else{
+      Profile_instance = '__wab_instance';
+    }
+    
   };
 
   
@@ -162,7 +167,7 @@ function PlasmicGame__RenderFunc(props) {
               balance:100,
               profile: {
                 props: {
-                  onClick: () => handleModalVisibility(true),
+                  onClick: () => handleModalVisibility(!isModalVisible),
                 },
               },
             }}
