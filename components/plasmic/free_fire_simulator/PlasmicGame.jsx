@@ -201,6 +201,11 @@ function PlasmicGame__RenderFunc(props) {
                   onClick: () => signOut({callbackUrl:"/"}),
                 },
               },
+              logout2: {
+                props: {
+                  onClick: () => signOut({callbackUrl:"/"}),
+                },
+              },
             }}
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
