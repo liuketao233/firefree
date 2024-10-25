@@ -59,6 +59,7 @@ function PlasmicProfileEntrance__RenderFunc(props) {
     ...variants
   };
   let result = 0;
+  
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -80,6 +81,7 @@ function PlasmicProfileEntrance__RenderFunc(props) {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.profile
       )}
+      onResult = {overrides.onResult}
       onClick={async event => {
         console.log("onClick PlasmicProfileEntrance__RenderFunc");
         if(result == 0){
