@@ -40,6 +40,8 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css";
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: ncwW2Qgif2pGwQDF81hXqa/projectcss
 import sty from "./PlasmicGame.module.css"; // plasmic-import: 1atz-K43T13v/css
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
 createPlasmicElementProxy;
 
@@ -192,6 +194,11 @@ function PlasmicGame__RenderFunc(props) {
               closeModal: {
                 props: {
                   onClick: () => handleModalVisibility(false),
+                },
+              },
+              logout: {
+                props: {
+                  onClick: () => signOut({callbackUrl:"/"}),
                 },
               },
             }}
