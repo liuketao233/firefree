@@ -191,7 +191,7 @@ function PlasmicGame__RenderFunc(props) {
               user_data:user_data,
               closeModal: {
                 props: {
-                  onClick: () => handleModalVisibility(''),
+                  onClick: () => handleModalName(''),
                 },
               },
             }}
