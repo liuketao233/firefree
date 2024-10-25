@@ -58,6 +58,7 @@ function PlasmicProfileEntrance__RenderFunc(props) {
     ...args,
     ...variants
   };
+  let result = 0;
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -81,6 +82,12 @@ function PlasmicProfileEntrance__RenderFunc(props) {
       )}
       onClick={async event => {
         console.log("onClick PlasmicProfileEntrance__RenderFunc");
+        if(result == 0){
+          result = 1;
+        }else{
+          result = 0;
+        }
+        onResult(result)
         const $steps = {};
         $steps["profileModal"] = true
           ? (() => {

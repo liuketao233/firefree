@@ -59,6 +59,13 @@ function useNextRouter() {
 function PlasmicGame__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
   const $translator = usePlasmicTranslator?.();
+  let Profile_instance = "__wab_instance";
+  
+  const handleChildResult = (result) => {
+    console.log("从子组件接收到的结果：", result);
+  };
+
+  
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -143,7 +150,8 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-            balance:100
+            balance:100,
+            onResult:handleChildResult
           }}
             data-plasmic-name={"topNavBar"}
             data-plasmic-override={overrides.topNavBar}
@@ -170,7 +178,7 @@ function PlasmicGame__RenderFunc(props) {
           <ProfileModal
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
-            className={classNames("__wab_instance", sty.profileModal)}
+            className={classNames(Profile_instance, sty.profileModal)}
           />
 
           <TopUp1stStepModal
