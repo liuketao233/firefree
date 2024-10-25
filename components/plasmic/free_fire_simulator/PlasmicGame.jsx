@@ -67,6 +67,7 @@ function PlasmicGame__RenderFunc(props) {
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
     console.log(isVisible, "isVisible");
+    Profile_instance = '';
   };
 
   
