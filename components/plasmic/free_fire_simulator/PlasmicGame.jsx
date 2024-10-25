@@ -146,7 +146,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-            gameBalance:100,
+            balance:100,
             onclick:onclickTopNav
           }}
             data-plasmic-name={"topNavBar"}
