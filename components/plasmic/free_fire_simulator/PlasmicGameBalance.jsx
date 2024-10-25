@@ -163,7 +163,7 @@ function PlasmicGameBalance__RenderFunc(props) {
                 sty.amount4
               )}
             >
-              <Trans__>{overrides.gameBalance.props.children}</Trans__>
+              <Trans__>{overrides.children}</Trans__>
             </div>
           </div>
           <div

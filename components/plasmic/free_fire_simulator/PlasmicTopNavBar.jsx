@@ -110,7 +110,6 @@ function PlasmicTopNavBar__RenderFunc(props) {
             className={classNames(projectcss.all, sty.freeBox___5VL1H)}
           >
             <GameBalance
-              overrides={overrides}
               data-plasmic-name={"gameBalance"}
               data-plasmic-override={overrides.gameBalance}
               className={classNames("__wab_instance", sty.gameBalance)}
