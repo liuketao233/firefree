@@ -61,9 +61,7 @@ function PlasmicGame__RenderFunc(props) {
   const $translator = usePlasmicTranslator?.();
   let Profile_instance = "__wab_instance";
   
-  const handleChildResult = (result) => {
-    console.log("从子组件接收到的结果：", result);
-  };
+  
 
   
   const args = React.useMemo(
@@ -150,8 +148,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-            balance:100,
-            onResult:handleChildResult
+            balance:100
           }}
             data-plasmic-name={"topNavBar"}
             data-plasmic-override={overrides.topNavBar}

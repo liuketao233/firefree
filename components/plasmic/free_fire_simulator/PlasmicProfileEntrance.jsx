@@ -65,6 +65,7 @@ function PlasmicProfileEntrance__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const currentUser = useCurrentUser?.() || {};
+  
   return (
     <div
       data-plasmic-name={"profile"}
@@ -81,15 +82,9 @@ function PlasmicProfileEntrance__RenderFunc(props) {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.profile
       )}
-      onResult = {overrides.onResult}
       onClick={async event => {
         console.log("onClick PlasmicProfileEntrance__RenderFunc");
-        if(result == 0){
-          result = 1;
-        }else{
-          result = 0;
-        }
-        onResult(result)
+        setModalVisible(true);
         const $steps = {};
         $steps["profileModal"] = true
           ? (() => {

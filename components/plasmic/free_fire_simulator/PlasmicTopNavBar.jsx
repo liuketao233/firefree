@@ -47,6 +47,7 @@ function useNextRouter() {
 
 function PlasmicTopNavBar__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicTopNavBar__RenderFunc")
   
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
@@ -117,9 +118,6 @@ function PlasmicTopNavBar__RenderFunc(props) {
             />
 
             <ProfileEntrance 
-              overrides={{
-                onResult:overrides.onResult
-              }}
               className={classNames(
                 "__wab_instance",
                 sty.profileEntrance__i9Qzs
@@ -127,9 +125,6 @@ function PlasmicTopNavBar__RenderFunc(props) {
             />
 
             <ProfileEntrance
-              overrides={{
-                onResult:overrides.onResult
-              }}
               className={classNames(
                 "__wab_instance",
                 sty.profileEntrance__v29M
