@@ -4,6 +4,7 @@ import * as React from "react";
 import { PlasmicTopNavBar } from "./plasmic/free_fire_simulator/PlasmicTopNavBar";
 
 function TopNavBar_(props, ref) {
+  console.log(props,"TopNavBar_");
   // Use PlasmicTopNavBar to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You

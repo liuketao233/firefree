@@ -10,6 +10,7 @@ import { useSession, signOut } from "next-auth/react";
 
 function Game() {
   const { data: session, status } = useSession();
+  console.log(session,status,"index page")
   // Use PlasmicGame to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -33,14 +34,7 @@ function Game() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        {status === "authenticated" ? <PlasmicGame /> : <PlasmicAuth  overrides={{
-          authButton:{
-            style:{
-              zIndex:99,
-              pointerEvents:"auto"
-            }
-          }
-        }}/>}
+        {status === "authenticated" ? <PlasmicGame /> : <PlasmicAuth/>}
       </PageParamsProvider__>
     </GlobalContextsProvider>
   );

@@ -109,9 +109,9 @@ function PlasmicTopNavBar__RenderFunc(props) {
             className={classNames(projectcss.all, sty.freeBox___5VL1H)}
           >
             <GameBalance
-              data-plasmic-name={"gameBakance"}
-              data-plasmic-override={overrides.gameBakance}
-              className={classNames("__wab_instance", sty.gameBakance)}
+              data-plasmic-name={"gameBalance"}
+              data-plasmic-override={overrides.gameBalance}
+              className={classNames("__wab_instance", sty.gameBalance)}
             />
 
             <ProfileEntrance
@@ -135,10 +135,10 @@ function PlasmicTopNavBar__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  navBar: ["navBar", "navBackground", "logo", "gameBakance"],
-  navBackground: ["navBackground", "logo", "gameBakance"],
+  navBar: ["navBar", "navBackground", "logo", "gameBalance"],
+  navBackground: ["navBackground", "logo", "gameBalance"],
   logo: ["logo"],
-  gameBakance: ["gameBakance"]
+  gameBalance: ["gameBalance"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -175,7 +175,7 @@ export const PlasmicTopNavBar = Object.assign(
     // Helper components rendering sub-elements
     navBackground: makeNodeComponent("navBackground"),
     logo: makeNodeComponent("logo"),
-    gameBakance: makeNodeComponent("gameBakance"),
+    gameBalance: makeNodeComponent("gameBalance"),
     // Metadata about props expected for PlasmicTopNavBar
     internalVariantProps: PlasmicTopNavBar__VariantProps,
     internalArgProps: PlasmicTopNavBar__ArgProps
