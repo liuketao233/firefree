@@ -5,6 +5,9 @@ import { PlasmicTopNavBar } from "./plasmic/free_fire_simulator/PlasmicTopNavBar
 
 function TopNavBar_(props, ref) {
   console.log(props,ref,"TopNavBar_");
+  const handleModalVisibility = (isVisible) => {
+    props.setModalVisible(isVisible);
+  };
   // Use PlasmicTopNavBar to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -19,7 +22,7 @@ function TopNavBar_(props, ref) {
   //
   // By default, we are just piping all TopNavBarProps here, but feel free
   // to do whatever works for you.
-  return <PlasmicTopNavBar navBar={{ ref }} {...props}/>;
+  return <PlasmicTopNavBar navBar={{ ref }} {...props} setModalVisible={handleModalVisibility}/>;
 }
 
 const TopNavBar = React.forwardRef(TopNavBar_);

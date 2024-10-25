@@ -84,7 +84,6 @@ function PlasmicProfileEntrance__RenderFunc(props) {
       )}
       onClick={async event => {
         console.log("onClick PlasmicProfileEntrance__RenderFunc");
-        setModalVisible(true);
         const $steps = {};
         $steps["profileModal"] = true
           ? (() => {
