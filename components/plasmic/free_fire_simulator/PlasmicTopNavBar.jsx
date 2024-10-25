@@ -116,7 +116,7 @@ function PlasmicTopNavBar__RenderFunc(props) {
               className={classNames("__wab_instance", sty.gameBalance)}
             />
 
-            <ProfileEntrance
+            <ProfileEntrance 
               className={classNames(
                 "__wab_instance",
                 sty.profileEntrance__i9Qzs

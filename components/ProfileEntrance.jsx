@@ -4,6 +4,7 @@ import * as React from "react";
 import { PlasmicProfileEntrance } from "./plasmic/free_fire_simulator/PlasmicProfileEntrance";
 
 function ProfileEntrance_(props, ref) {
+  console.log(props,ref,'ProfileEntrance_')
   // Use PlasmicProfileEntrance to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
