@@ -61,12 +61,12 @@ function PlasmicGame__RenderFunc(props) {
   const $translator = usePlasmicTranslator?.();
 
   let Profile_instance = "__wab_instance";
-  const [isModalVisible, setModalVisible] = React.useState(false);
+  let ModalName = "";
 
   // 回调函数：用于控制 Modal 的显示状态
-  const handleModalVisibility = (isVisible) => {
-    setModalVisible(isVisible);
-    console.log(isModalVisible, "isVisible");
+  const handleModalName = (showModalName) => {
+    ModalName = showModalName;
+    console.log(ModalName, "ModalName");
   };
 
   let user_data = [];
@@ -161,7 +161,7 @@ function PlasmicGame__RenderFunc(props) {
               balance:100,
               profile: {
                 props: {
-                  onClick: () => handleModalVisibility(!isModalVisible),
+                  onClick: () => handleModalName('ProfileModal'),
                 },
               },
             }}
@@ -187,11 +187,11 @@ function PlasmicGame__RenderFunc(props) {
           data-plasmic-override={overrides.allModals}
           className={classNames(projectcss.all, sty.allModals)}
         >
-          {isModalVisible === true ? <ProfileModal overrides={{
+          {ModalName === 'ProfileModal' ? <ProfileModal overrides={{
               user_data:user_data,
               closeModal: {
                 props: {
-                  onClick: () => handleModalVisibility(false),
+                  onClick: () => handleModalVisibility(''),
                 },
               },
             }}
