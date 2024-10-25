@@ -59,7 +59,17 @@ function useNextRouter() {
 function PlasmicGame__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
   const $translator = usePlasmicTranslator?.();
+
   let Profile_instance = "__wab_instance";
+  const [isModalVisible, setModalVisible] = React.useState(false);
+
+  // 回调函数：用于控制 Modal 的显示状态
+  const handleModalVisibility = (isVisible) => {
+    setModalVisible(isVisible);
+    console.log(isVisible, "isVisible");
+  };
+
+  
   
   
 
@@ -148,11 +158,12 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-            balance:100
-          }}
+              balance:100
+            }}
             data-plasmic-name={"topNavBar"}
             data-plasmic-override={overrides.topNavBar}
             className={classNames("__wab_instance", sty.topNavBar)}
+            setModalVisible={handleModalVisibility}
           />
 
           <GameBody
