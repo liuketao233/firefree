@@ -117,14 +117,14 @@ function PlasmicTopNavBar__RenderFunc(props) {
               className={classNames("__wab_instance", sty.gameBalance)}
             />
 
-            <ProfileEntrance setModalVisible={overrides.setModalVisible}
+            <ProfileEntrance overrides={overrides}
               className={classNames(
                 "__wab_instance",
                 sty.profileEntrance__i9Qzs
               )}
             />
 
-            <ProfileEntrance
+            <ProfileEntrance overrides={overrides}
               className={classNames(
                 "__wab_instance",
                 sty.profileEntrance__v29M

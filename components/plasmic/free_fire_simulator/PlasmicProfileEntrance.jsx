@@ -82,30 +82,30 @@ function PlasmicProfileEntrance__RenderFunc(props) {
         plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.profile
       )}
-      onClick={async event => {
-        console.log("onClick PlasmicProfileEntrance__RenderFunc");
-        const $steps = {};
-        $steps["profileModal"] = true
-          ? (() => {
-              const actionArgs = { operation: 0 };
-              return (({ variable, value, startIndex, deleteCount }) => {
-                if (!variable) {
-                  return;
-                }
-                const { objRoot, variablePath } = variable;
-                $stateSet(objRoot, variablePath, value);
-                return value;
-              })?.apply(null, [actionArgs]);
-            })()
-          : undefined;
-        if (
-          $steps["profileModal"] != null &&
-          typeof $steps["profileModal"] === "object" &&
-          typeof $steps["profileModal"].then === "function"
-        ) {
-          $steps["profileModal"] = await $steps["profileModal"];
-        }
-      }}
+      // onClick={async event => {
+      //   console.log("onClick PlasmicProfileEntrance__RenderFunc");
+      //   const $steps = {};
+      //   $steps["profileModal"] = true
+      //     ? (() => {
+      //         const actionArgs = { operation: 0 };
+      //         return (({ variable, value, startIndex, deleteCount }) => {
+      //           if (!variable) {
+      //             return;
+      //           }
+      //           const { objRoot, variablePath } = variable;
+      //           $stateSet(objRoot, variablePath, value);
+      //           return value;
+      //         })?.apply(null, [actionArgs]);
+      //       })()
+      //     : undefined;
+      //   if (
+      //     $steps["profileModal"] != null &&
+      //     typeof $steps["profileModal"] === "object" &&
+      //     typeof $steps["profileModal"].then === "function"
+      //   ) {
+      //     $steps["profileModal"] = await $steps["profileModal"];
+      //   }
+      // }}
     >
       <div
         data-plasmic-name={"profileBackground"}
