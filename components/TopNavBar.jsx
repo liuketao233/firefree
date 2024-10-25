@@ -22,7 +22,9 @@ function TopNavBar_(props, ref) {
   //
   // By default, we are just piping all TopNavBarProps here, but feel free
   // to do whatever works for you.
-  return <PlasmicTopNavBar navBar={{ ref }} {...props} setModalVisible={handleModalVisibility}/>;
+  return <PlasmicTopNavBar navBar={{ ref }} {...props} overrides={{
+    setModalVisible:handleModalVisibility
+  }}/>;
 }
 
 const TopNavBar = React.forwardRef(TopNavBar_);
