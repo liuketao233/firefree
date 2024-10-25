@@ -47,6 +47,7 @@ function useNextRouter() {
 
 function PlasmicTopNavBar__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
