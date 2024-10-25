@@ -69,7 +69,7 @@ function PlasmicGame__RenderFunc(props) {
     console.log(isModalVisible, "isVisible");
   };
 
-  
+  let user_data = [];
   
   
 
@@ -187,7 +187,14 @@ function PlasmicGame__RenderFunc(props) {
           data-plasmic-override={overrides.allModals}
           className={classNames(projectcss.all, sty.allModals)}
         >
-          {isModalVisible === true ? <ProfileModal
+          {isModalVisible === true ? <ProfileModal overrides={{
+              user_data:user_data,
+              closeModal: {
+                props: {
+                  onClick: () => handleModalVisibility(false),
+                },
+              },
+            }}
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
             className={classNames("", sty.profileModal)}
