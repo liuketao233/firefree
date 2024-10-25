@@ -73,9 +73,6 @@ function PlasmicGame__RenderFunc(props) {
     ...args,
     ...variants
   };
-  const onclickTopNav = () => {
-    console.log("onclickTopNav")
-  }
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -146,8 +143,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-            balance:100,
-            onclick:onclickTopNav
+            balance:100
           }}
             data-plasmic-name={"topNavBar"}
             data-plasmic-override={overrides.topNavBar}

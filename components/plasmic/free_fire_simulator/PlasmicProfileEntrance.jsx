@@ -80,6 +80,7 @@ function PlasmicProfileEntrance__RenderFunc(props) {
         sty.profile
       )}
       onClick={async event => {
+        console.log("onClick PlasmicProfileEntrance__RenderFunc");
         const $steps = {};
         $steps["profileModal"] = true
           ? (() => {
