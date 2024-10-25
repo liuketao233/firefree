@@ -67,12 +67,6 @@ function PlasmicGame__RenderFunc(props) {
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
     console.log(isModalVisible, "isVisible");
-    if(isModalVisible == true){
-      Profile_instance = '';
-    }else{
-      Profile_instance = '__wab_instance';
-    }
-    
   };
 
   
@@ -193,11 +187,15 @@ function PlasmicGame__RenderFunc(props) {
           data-plasmic-override={overrides.allModals}
           className={classNames(projectcss.all, sty.allModals)}
         >
-          <ProfileModal
+          {isModalVisible === true ? <ProfileModal
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
-            className={classNames(Profile_instance, sty.profileModal)}
-          />
+            className={classNames("", sty.profileModal)}
+          /> : <ProfileModal
+          data-plasmic-name={"profileModal"}
+          data-plasmic-override={overrides.profileModal}
+          className={classNames("__wab_instance", sty.profileModal)}
+        />}
 
           <TopUp1stStepModal
             data-plasmic-name={"topUp1stStepModal"}
