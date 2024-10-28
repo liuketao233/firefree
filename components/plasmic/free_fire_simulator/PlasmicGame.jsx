@@ -65,10 +65,16 @@ function PlasmicGame__RenderFunc(props) {
 
   let Profile_instance = "__wab_instance";
   const [isModalVisible, setModalVisible] = React.useState(false);
+  const [isModalTopup, setModalTopup] = React.useState(false);
 
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
+    // console.log(isModalVisible, "isVisible");
+  };
+  // 回调函数：用于控制 Modal 的显示状态
+  const handleModalTopup = (isTopup) => {
+    setModalTopup(isTopup);
     // console.log(isModalVisible, "isVisible");
   };
   const [apiData, setApiData] = React.useState(null);
@@ -225,6 +231,11 @@ function PlasmicGame__RenderFunc(props) {
                   onClick: () => signOut({callbackUrl:"/"}),
                 },
               },
+              topUpMobile2: {
+                props: {
+                  onClick: () => handleModalTopup(true),
+                },
+              },
             }}
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
@@ -234,12 +245,29 @@ function PlasmicGame__RenderFunc(props) {
           data-plasmic-override={overrides.profileModal}
           className={classNames("__wab_instance", sty.profileModal)}
         />}
-
-          <TopUp1stStepModal
-            data-plasmic-name={"topUp1stStepModal"}
-            data-plasmic-override={overrides.topUp1stStepModal}
-            className={classNames("__wab_instance", sty.topUp1stStepModal)}
-          />
+          {
+            isModalTopup === true ? <TopUp1stStepModal overrides={{
+              closeModal: {
+                props: {
+                  onClick: () => handleModalTopup(false),
+                },
+              },
+              closeModal2: {
+                props: {
+                  onClick: () => handleModalTopup(false),
+                },
+              },
+            }}
+              data-plasmic-name={"topUp1stStepModal"}
+              data-plasmic-override={overrides.topUp1stStepModal}
+              className={classNames("", sty.topUp1stStepModal)}
+            />:<TopUp1stStepModal
+              data-plasmic-name={"topUp1stStepModal"}
+              data-plasmic-override={overrides.topUp1stStepModal}
+              className={classNames("__wab_instance", sty.topUp1stStepModal)}
+            />
+          }
+          
 
           <TopUp2ndStepModal
             data-plasmic-name={"topUp2ndStepModal"}
