@@ -4,7 +4,7 @@ import * as React from "react";
 import { PlasmicGameBalance } from "./plasmic/free_fire_simulator/PlasmicGameBalance";
 
 function GameBalance_(props, ref) {
-  console.log(props,'GameBalance_')
+  // console.log(props,'GameBalance_')
   // Use PlasmicGameBalance to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
