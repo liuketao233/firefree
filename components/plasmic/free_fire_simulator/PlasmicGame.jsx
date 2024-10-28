@@ -81,7 +81,6 @@ function PlasmicGame__RenderFunc(props) {
       if(data.status == 500){
         signOut({callbackUrl:"/"});
       }
-      console.log(apiData,"apiData",data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -89,7 +88,10 @@ function PlasmicGame__RenderFunc(props) {
   
   React.useEffect(() => {
     setTimeout(fetchData, 1500); // 3秒后重试
-  }, []); // 空数组表示只在组件挂载时调用一次
+    if(apiData){
+      console.log(apiData,"apiData");
+    }
+  }, [apiData]); // 空数组表示只在组件挂载时调用一次
 
   
   const args = React.useMemo(
