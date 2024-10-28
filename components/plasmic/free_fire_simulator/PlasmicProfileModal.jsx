@@ -149,7 +149,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                 displayWidth={"10px"}
                 loading={"lazy"}
                 src={{
-                  src: overrides && overrides.accountInfo ?overrides.accountInfo.data[0].image : "/plasmic/free_fire_simulator/images/copying1.svg",
+                  src: "/plasmic/free_fire_simulator/images/copying1.svg",
                   fullWidth: 10,
                   fullHeight: 10,
                   aspectRatio: 1
