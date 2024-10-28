@@ -54,7 +54,7 @@ function useNextRouter() {
 
 function PlasmicProfileModal__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(overrides,"PlasmicProfileModal__RenderFunc");
+  console.log(overrides.accountInfo,"PlasmicProfileModal__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -149,7 +149,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                 displayWidth={"10px"}
                 loading={"lazy"}
                 src={{
-                  src: overrides.accountInfo.data[0].image | '',
+                  src: "/plasmic/free_fire_simulator/images/copying1.svg",
                   fullWidth: 10,
                   fullHeight: 10,
                   aspectRatio: 1
@@ -163,7 +163,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                   sty.text__v1XTy
                 )}
               >
-                <Trans__>{overrides.accountInfo.data[0].name  | ''}</Trans__>
+                <Trans__>{"Username"}</Trans__>
               </div>
               <div
                 className={classNames(
@@ -172,7 +172,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                   sty.text__j3Pah
                 )}
               >
-                <Trans__>{"ID: "}{overrides.accountInfo.data[0]._id | 0}</Trans__>
+                <Trans__>{"ID: 123456"}</Trans__>
               </div>
               <div
                 data-plasmic-name={"avatar4"}
@@ -243,7 +243,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                   sty.text__rLlk
                 )}
               >
-                <Trans__>{overrides.accountInfo.data[0].balance | 0}</Trans__>
+                <Trans__>{"150,000"}</Trans__>
               </div>
               <div
                 data-plasmic-name={"group2"}
@@ -445,7 +445,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                     sty.text__uPzYa
                   )}
                 >
-                  <Trans__>{overrides.accountInfo.data[0].email | ''}</Trans__>
+                  <Trans__>{"123456Abcd@gmail.com"}</Trans__>
                 </div>
               </div>
             </div>
@@ -479,7 +479,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                     sty.text__m2BkM
                   )}
                 >
-                  <Trans__>{overrides.accountInfo.data[0].name | ''}</Trans__>
+                  <Trans__>{"Vincent"}</Trans__>
                 </div>
                 <Edit1Icon
                   className={classNames(projectcss.all, sty.svg__uZVfK)}
