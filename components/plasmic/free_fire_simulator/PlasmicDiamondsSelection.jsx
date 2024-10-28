@@ -47,6 +47,7 @@ function useNextRouter() {
 
 function PlasmicDiamondsSelection__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicDiamondsSelection__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -111,7 +112,7 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
         hasGap={true}
         className={classNames(projectcss.all, sty.freeBox)}
       >
-        <DiamondOptionBar
+        <DiamondOptionBar 
           className={classNames("__wab_instance", sty.diamondOptionBar__eWhPu)}
           topUp={
             hasVariant(globalVariants, "desktopBase", "desktopOnly") ? [] : []

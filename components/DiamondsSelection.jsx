@@ -4,7 +4,7 @@ import * as React from "react";
 import { PlasmicDiamondsSelection } from "./plasmic/free_fire_simulator/PlasmicDiamondsSelection";
 
 function DiamondsSelection_(props, ref) {
-  console.log(props,DiamondsSelection_)
+  // console.log(props,"DiamondsSelection_")
   // Use PlasmicDiamondsSelection to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
