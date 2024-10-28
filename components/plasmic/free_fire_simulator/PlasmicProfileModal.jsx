@@ -149,7 +149,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                 displayWidth={"10px"}
                 loading={"lazy"}
                 src={{
-                  src: overrides.accountInfo.data[0].image,
+                  src: overrides.accountInfo.data[0].image | '',
                   fullWidth: 10,
                   fullHeight: 10,
                   aspectRatio: 1
@@ -163,7 +163,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                   sty.text__v1XTy
                 )}
               >
-                <Trans__>{overrides.accountInfo.data[0].name}</Trans__>
+                <Trans__>{overrides.accountInfo.data[0].name  | ''}</Trans__>
               </div>
               <div
                 className={classNames(
@@ -172,7 +172,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                   sty.text__j3Pah
                 )}
               >
-                <Trans__>{"ID: "}{overrides.accountInfo.data[0]._id}</Trans__>
+                <Trans__>{"ID: "}{overrides.accountInfo.data[0]._id | 0}</Trans__>
               </div>
               <div
                 data-plasmic-name={"avatar4"}
@@ -445,7 +445,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                     sty.text__uPzYa
                   )}
                 >
-                  <Trans__>{overrides.accountInfo.data[0].email}</Trans__>
+                  <Trans__>{overrides.accountInfo.data[0].email | ''}</Trans__>
                 </div>
               </div>
             </div>
@@ -479,7 +479,7 @@ function PlasmicProfileModal__RenderFunc(props) {
                     sty.text__m2BkM
                   )}
                 >
-                  <Trans__>{overrides.accountInfo.data[0].name}</Trans__>
+                  <Trans__>{overrides.accountInfo.data[0].name | ''}</Trans__>
                 </div>
                 <Edit1Icon
                   className={classNames(projectcss.all, sty.svg__uZVfK)}
