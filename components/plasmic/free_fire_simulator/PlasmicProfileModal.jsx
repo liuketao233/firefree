@@ -54,6 +54,7 @@ function useNextRouter() {
 
 function PlasmicProfileModal__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(overrides,"PlasmicProfileModal__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
