@@ -41,6 +41,7 @@ import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plas
 import projectcss from "./plasmic.module.css"; // plasmic-import: ncwW2Qgif2pGwQDF81hXqa/projectcss
 import sty from "./PlasmicGame.module.css"; // plasmic-import: 1atz-K43T13v/css
 import { signOut } from "next-auth/react";
+import { ValueContext } from "./ValueContext"; // 导入上下文
 
 createPlasmicElementProxy;
 
@@ -105,11 +106,11 @@ function PlasmicGame__RenderFunc(props) {
   //     console.log(apiData, "apiData"); // 在 apiData 更新时打印它的值
   //   }
   // }, [apiData]);
-  const [selectedTopup, setSelectedTopup] = React.useState(10);
+  const [topUp, setTopUp] = React.useState(10);
 
   // 子组件4层选择变化的回调函数
   const handleSelectChange = (value) => {
-    setSelectedTopup(value);
+    setTopUp(value);
     console.log("选中的值: ", value);
   };
   
@@ -165,6 +166,7 @@ function PlasmicGame__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -279,7 +281,10 @@ function PlasmicGame__RenderFunc(props) {
               }
             }}
               data-plasmic-name={"topUp1stStepModal"}
-              data-plasmic-override={overrides.topUp1stStepModal}
+              data-plasmic-override={{
+                onSelectChange: handleSelectChange, // 将选择变化的回调函数传递给子组件
+                topUp: topUp, // 将选中的值传递给子组件
+              }}
               className={classNames("", sty.topUp1stStepModal)}
             />:<TopUp1stStepModal
               data-plasmic-name={"topUp1stStepModal"}

@@ -113,6 +113,8 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
         className={classNames(projectcss.all, sty.freeBox)}
       >
         <DiamondOptionBar 
+          data-plasmic-name={"diamondOptionBar"}
+          data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__eWhPu)}
           topUp={
             hasVariant(globalVariants, "desktopBase", "desktopOnly") ? [] : []
@@ -125,6 +127,8 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
         />
 
         <DiamondOptionBar
+          data-plasmic-name={"diamondOptionBar"}
+          data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__ez9Qe)}
           topUp={
             hasVariant(globalVariants, "desktopBase", "desktopOnly") ? [] : []
@@ -137,6 +141,8 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
         />
 
         <DiamondOptionBar
+          data-plasmic-name={"diamondOptionBar"}
+          data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__xCfKa)}
           topUp={[]}
           withdraw={["_3rdBar"]}
