@@ -74,6 +74,7 @@ function PlasmicGame__RenderFunc(props) {
   };
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalTopup = (isTopup) => {
+    setModalVisible(false);
     setModalTopup(isTopup);
     // console.log(isModalVisible, "isVisible");
   };
