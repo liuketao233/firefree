@@ -105,7 +105,7 @@ function PlasmicGame__RenderFunc(props) {
   //     console.log(apiData, "apiData"); // 在 apiData 更新时打印它的值
   //   }
   // }, [apiData]);
-  const [selectedTopup, setSelectedTopup] = useState(10);
+  const [selectedTopup, setSelectedTopup] = React.useState(10);
 
   // 子组件4层选择变化的回调函数
   const handleSelectChange = (value) => {
