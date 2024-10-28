@@ -78,6 +78,10 @@ function PlasmicGame__RenderFunc(props) {
     setModalTopup(isTopup);
     // console.log(isModalVisible, "isVisible");
   };
+  const handleModalTopupshowUserinfo = () =>{
+    setModalVisible(true);
+    setModalTopup(false);
+  }
   const [apiData, setApiData] = React.useState(null);
 
   const fetchData = async () => {
@@ -101,6 +105,13 @@ function PlasmicGame__RenderFunc(props) {
   //     console.log(apiData, "apiData"); // 在 apiData 更新时打印它的值
   //   }
   // }, [apiData]);
+  const [selectedTopup, setSelectedTopup] = useState(10);
+
+  // 子组件4层选择变化的回调函数
+  const handleSelectChange = (value) => {
+    setSelectedTopup(value);
+    console.log("选中的值: ", value);
+  };
   
   const args = React.useMemo(
     () =>
@@ -241,7 +252,9 @@ function PlasmicGame__RenderFunc(props) {
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
             className={classNames("", sty.profileModal)}
-          /> : <ProfileModal
+          /> : <ProfileModal overrides={{
+            accountInfo:apiData,
+          }}
           data-plasmic-name={"profileModal"}
           data-plasmic-override={overrides.profileModal}
           className={classNames("__wab_instance", sty.profileModal)}
@@ -255,9 +268,15 @@ function PlasmicGame__RenderFunc(props) {
               },
               closeModal2: {
                 props: {
-                  onClick: () => handleModalTopup(false),
+                  onClick: () => handleModalTopupshowUserinfo(),
                 },
               },
+              diamondsSelection:{
+                props:{
+                  onSelectChange: handleSelectChange, // 将选择变化的回调函数传递给子组件
+                  selectedTopup: selectedTopup, // 将选中的值传递给子组件
+                }
+              }
             }}
               data-plasmic-name={"topUp1stStepModal"}
               data-plasmic-override={overrides.topUp1stStepModal}
