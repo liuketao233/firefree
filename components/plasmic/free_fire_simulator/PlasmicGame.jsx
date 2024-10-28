@@ -81,7 +81,7 @@ function PlasmicGame__RenderFunc(props) {
       if(data.status == 500){
         signOut({callbackUrl:"/"});
       }
-      console.log(apiData,"apiData");
+      console.log(apiData,"apiData",data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -206,7 +206,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.allModals)}
         >
           {isModalVisible === true ? <ProfileModal overrides={{
-              accountInfo:apiData.data,
+              accountInfo:apiData,
               closeModal: {
                 props: {
                   onClick: () => handleModalVisibility(false),
