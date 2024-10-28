@@ -78,7 +78,7 @@ function PlasmicGame__RenderFunc(props) {
       const response = await fetch("/api/user"); // 替换为实际的 API 地址
       const data = await response.json();
       setApiData(data);
-      if(apiData.status == 500){
+      if(data.status == 500){
         signOut({callbackUrl:"/"});
       }
       console.log(apiData,"apiData");
