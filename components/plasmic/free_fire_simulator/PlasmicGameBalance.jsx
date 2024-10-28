@@ -50,7 +50,7 @@ function useNextRouter() {
 
 function PlasmicGameBalance__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(overrides,"PlasmicGameBalance__RenderFunc")
+  // console.log(overrides,"PlasmicGameBalance__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

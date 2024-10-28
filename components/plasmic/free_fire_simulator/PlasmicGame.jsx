@@ -78,6 +78,9 @@ function PlasmicGame__RenderFunc(props) {
       const response = await fetch("/api/user"); // 替换为实际的 API 地址
       const data = await response.json();
       setApiData(data);
+      if(apiData.status == 500){
+        signOut({callbackUrl:"/"});
+      }
       console.log(apiData,"apiData");
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -85,7 +88,7 @@ function PlasmicGame__RenderFunc(props) {
   };
   
   React.useEffect(() => {
-    setTimeout(fetchData, 1000); // 3秒后重试
+    setTimeout(fetchData, 1500); // 3秒后重试
   }, []); // 空数组表示只在组件挂载时调用一次
 
   
