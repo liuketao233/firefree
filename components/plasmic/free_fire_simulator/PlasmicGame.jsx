@@ -57,6 +57,8 @@ function useNextRouter() {
   return undefined;
 }
 
+
+
 function PlasmicGame__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
   const $translator = usePlasmicTranslator?.();
@@ -69,10 +71,22 @@ function PlasmicGame__RenderFunc(props) {
     setModalVisible(isVisible);
     console.log(isModalVisible, "isVisible");
   };
+  const [apiData, setApiData] = useState(null);
 
-  let user_data = [];
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/user"); // 替换为实际的 API 地址
+      const data = await response.json();
+      setApiData(data);
+      console.log(apiData,"apiData");
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
   
-  
+  useEffect(() => {
+    fetchData();
+  }, []); // 空数组表示只在组件挂载时调用一次
 
   
   const args = React.useMemo(
