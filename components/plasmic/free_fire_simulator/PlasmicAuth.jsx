@@ -78,7 +78,7 @@ function PlasmicAuth__RenderFunc(props) {
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
   const popupCenter = (url, title) => {
-    console.log(url, title, "onclick  google auth");
+    // console.log(url, title, "onclick  google auth");
     const dualScreenLeft = window.screenLeft ?? window.screenX;
     const dualScreenTop = window.screenTop ?? window.screenY;
 

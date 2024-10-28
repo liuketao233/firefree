@@ -69,9 +69,9 @@ function PlasmicGame__RenderFunc(props) {
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
-    console.log(isModalVisible, "isVisible");
+    // console.log(isModalVisible, "isVisible");
   };
-  const [apiData, setApiData] = useState(null);
+  const [apiData, setApiData] = React.useState(null);
 
   const fetchData = async () => {
     try {
