@@ -206,7 +206,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.allModals)}
         >
           {isModalVisible === true ? <ProfileModal overrides={{
-              user_data:apiData.data,
+              accountInfo:apiData.data,
               closeModal: {
                 props: {
                   onClick: () => handleModalVisibility(false),
