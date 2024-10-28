@@ -87,13 +87,13 @@ function PlasmicGame__RenderFunc(props) {
   };
   
   React.useEffect(() => {
-    fetchData()
-    // setTimeout(fetchData, 1500); // 3秒后重试
-    if(apiData){
-      console.log(apiData,"apiData");
+    setTimeout(fetchData, 1500); // 3秒后重试
+  }, []); // 空数组表示只在组件挂载时调用一次
+  React.useEffect(() => {
+    if (apiData) {
+      console.log(apiData, "apiData"); // 在 apiData 更新时打印它的值
     }
-  }, [apiData]); // 空数组表示只在组件挂载时调用一次
-
+  }, [apiData]);
   
   const args = React.useMemo(
     () =>
