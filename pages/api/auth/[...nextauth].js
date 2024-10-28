@@ -33,6 +33,7 @@ export default async function handler(req, res) {
             providerAccountId: account.providerAccountId,
             createdAt: new Date(),
             updatedAt: new Date(),
+            balance:0,
           });
         } else {
           // 如果用户已存在，更新 lastLoginAt 和 updatedAt

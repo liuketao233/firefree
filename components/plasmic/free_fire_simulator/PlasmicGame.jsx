@@ -84,7 +84,7 @@ function PlasmicGame__RenderFunc(props) {
     }
   };
   
-  useEffect(() => {
+  React.useEffect(() => {
     fetchData();
   }, []); // 空数组表示只在组件挂载时调用一次
 
