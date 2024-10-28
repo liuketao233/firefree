@@ -271,12 +271,6 @@ function PlasmicGame__RenderFunc(props) {
                 props: {
                   onClick: () => handleModalTopupshowUserinfo(),
                 },
-              },
-              diamondsSelection:{
-                props:{
-                  onSelectChange: handleSelectChange, // 将选择变化的回调函数传递给子组件
-                  selectedTopup: selectedTopup, // 将选中的值传递给子组件
-                }
               }
             }}
               data-plasmic-name={"topUp1stStepModal"}
