@@ -96,6 +96,9 @@ function PlasmicGame__RenderFunc(props) {
       console.error("Error fetching data:", error);
     }
   };
+  const updateUserInfo = () => {
+    fetchData();
+  };
   
   React.useEffect(() => {
     setTimeout(fetchData, 1200); // 3秒后重试
@@ -216,6 +219,7 @@ function PlasmicGame__RenderFunc(props) {
             }}
             data-plasmic-override={overrides.gameBody}
             className={classNames("__wab_instance", sty.gameBody)}
+            updateUserInfo={updateUserInfo}
           />
         </div>
         <ModalMask

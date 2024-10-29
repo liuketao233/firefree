@@ -50,6 +50,7 @@ function useNextRouter() {
 
 function PlasmicGameBody__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicGameBody__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -65,6 +66,7 @@ function PlasmicGameBody__RenderFunc(props) {
     ...args,
     ...variants
   };
+  // const updateUserInfo = overrides.updateUserInfo;
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -81,6 +83,7 @@ function PlasmicGameBody__RenderFunc(props) {
   const handleChoice = (value) => {
     setChoice(value);
     console.log(value, "handleChoice");
+    setTimeout(submitData,200)
   };
   const handleAmount = (value) => {
     setAmount(value);
@@ -91,6 +94,23 @@ function PlasmicGameBody__RenderFunc(props) {
     let balance = overrides.balance;
     setAmount(value < 100?100:(value>balance?balance:value));
     console.log(value, "handleAmountMulti");
+  };
+
+  const submitData = async () => {
+    try {
+      const response = await fetch('/api/game', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ choice:choice, amount:amount,gametype:"airdrop" }),
+      });
+
+      const result = await response.json();
+      console.log(result,"submitData")
+    } catch (error) {
+      console.error('fail', error);
+    }
   };
   return (
     <Stack__
