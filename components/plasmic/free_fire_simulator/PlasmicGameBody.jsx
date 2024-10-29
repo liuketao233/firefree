@@ -83,7 +83,7 @@ function PlasmicGameBody__RenderFunc(props) {
   };
   const handleAmount = (value) => {
     setAmount(value);
-    console.log(value, "handleChoice");
+    console.log(value, "handleAmount");
   };
   return (
     <Stack__
@@ -134,7 +134,7 @@ function PlasmicGameBody__RenderFunc(props) {
           }}
           data-plasmic-name={"flipSelection"}
           data-plasmic-override={overrides.flipSelection}
-          amount={amount}
+          amount={[amount]}
           className={classNames("__wab_instance", sty.flipSelection)}
           scenario={["airdrop"]}
         />
@@ -143,7 +143,7 @@ function PlasmicGameBody__RenderFunc(props) {
           data-plasmic-name={"amountSelection"}
           data-plasmic-override={overrides.amountSelection}
           className={classNames("__wab_instance", sty.amountSelection)}
-          amount={amount}
+          amount={[amount]}
         />
 
         {(
