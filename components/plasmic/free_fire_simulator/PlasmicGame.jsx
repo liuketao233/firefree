@@ -99,6 +99,26 @@ function PlasmicGame__RenderFunc(props) {
   const updateUserInfo = () => {
     fetchData();
   };
+  const submitData = async (choice,amount,gametype) => {
+    try {
+      const response = await fetch('/api/game', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // 确保带上 cookie
+        body: JSON.stringify({ choice:choice, amount:amount,gametype:gametype }),
+      });
+
+      const result = await response.json();
+      console.log(result,"submitData")
+    } catch (error) {
+      console.error('fail', error);
+    }
+  };
+  const doGame = (choice,amount,gametype) =>{
+    submitData(choice,amount,gametype)
+  }
   
   React.useEffect(() => {
     setTimeout(fetchData, 1200); // 3秒后重试
@@ -219,7 +239,7 @@ function PlasmicGame__RenderFunc(props) {
             }}
             data-plasmic-override={overrides.gameBody}
             className={classNames("__wab_instance", sty.gameBody)}
-            updateUserInfo={updateUserInfo}
+            doGame={doGame}
           />
         </div>
         <ModalMask

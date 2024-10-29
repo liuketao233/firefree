@@ -66,7 +66,7 @@ function PlasmicGameBody__RenderFunc(props) {
     ...args,
     ...variants
   };
-  // const updateUserInfo = overrides.updateUserInfo;
+  // const doGame = overrides.doGame;
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -83,7 +83,7 @@ function PlasmicGameBody__RenderFunc(props) {
   const handleChoice = (value) => {
     setChoice(value);
     console.log(value, "handleChoice");
-    setTimeout(submitData,200)
+    // setTimeout(submitData,200)
   };
   const handleAmount = (value) => {
     setAmount(value);
@@ -96,23 +96,7 @@ function PlasmicGameBody__RenderFunc(props) {
     console.log(value, "handleAmountMulti");
   };
 
-  const submitData = async () => {
-    try {
-      const response = await fetch('/api/game', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include', // 确保带上 cookie
-        body: JSON.stringify({ choice:choice, amount:amount,gametype:"airdrop" }),
-      });
-
-      const result = await response.json();
-      console.log(result,"submitData")
-    } catch (error) {
-      console.error('fail', error);
-    }
-  };
+  
   return (
     <Stack__
       as={"div"}
