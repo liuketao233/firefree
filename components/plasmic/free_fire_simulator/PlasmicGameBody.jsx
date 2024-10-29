@@ -142,6 +142,9 @@ function PlasmicGameBody__RenderFunc(props) {
         />
 
         <AmountSelection
+          overrides={{
+            curentAmount:amount
+          }}
           data-plasmic-name={"amountSelection"}
           data-plasmic-override={overrides.amountSelection}
           className={classNames("__wab_instance", sty.amountSelection)}

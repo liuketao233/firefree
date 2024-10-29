@@ -54,6 +54,7 @@ function useNextRouter() {
 
 function PlasmicAmountSelection__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicAmountSelection__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -225,7 +226,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                     sty.curentAmount
                   )}
                 >
-                  <Trans__>{"200"}</Trans__>
+                  <Trans__>{overrides.curentAmount}</Trans__>
                 </div>
                 <div
                   data-plasmic-name={"diamond"}
