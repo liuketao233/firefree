@@ -53,7 +53,7 @@ function useNextRouter() {
 }
 
 function PlasmicAmountSelection__RenderFunc(props) {
-  const { variants, overrides, forNode } = props;
+  const { variants, overrides, forNode,onAmountChange } = props;
   console.log(props,"PlasmicAmountSelection__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
@@ -157,6 +157,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 className={classNames(projectcss.all, sty.freeBox__gq3Y2)}
               >
                 <_01KButton
+                  onClick={() => onAmountChange(100)}
                   chosen={
                     hasVariant($state, "amount", "unnamedVariant")
                       ? true
@@ -173,6 +174,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 />
 
                 <_1KButton
+                  onClick={() => onAmountChange(1000)}
                   className={classNames(
                     "__wab_instance",
                     sty._1KButton___5ZnaA,
@@ -184,6 +186,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 />
 
                 <_10KButton
+                  onClick={() => onAmountChange(10000)}
                   className={classNames(
                     "__wab_instance",
                     sty._10KButton__bChRc,
