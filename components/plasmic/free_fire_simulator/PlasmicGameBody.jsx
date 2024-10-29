@@ -74,7 +74,7 @@ function PlasmicGameBody__RenderFunc(props) {
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
   const [choice, setChoice] = React.useState(3);
-  const [amount, setAmount] = React.useState(100);
+  const [amount, setAmount] = React.useState("_100");
 
   // 回调函数：用于控制 Modal 的显示状态
   const handleChoice = (value) => {
@@ -143,6 +143,7 @@ function PlasmicGameBody__RenderFunc(props) {
           data-plasmic-name={"amountSelection"}
           data-plasmic-override={overrides.amountSelection}
           className={classNames("__wab_instance", sty.amountSelection)}
+          amount={amount}
         />
 
         {(
