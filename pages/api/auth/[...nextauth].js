@@ -52,21 +52,6 @@ export default async function handler(req, res) {
         }
         return true;
       },
-      async session({ session, token  }) {
-        session.accessToken = token.accessToken; // 将 JWT 传递到 session 中
-        return session;
-      },
-      async jwt({ token, account }) {
-        if (account) {
-          // 当用户首次登录时，生成 JWT
-          token.accessToken = jwt.sign(
-            { email: token.email, name: token.name },
-            process.env.JWT_SECRET,
-            { expiresIn: '30 days' }
-          );
-        }
-        return token;
-      },
     },
   });
 }
