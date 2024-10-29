@@ -110,7 +110,7 @@ function PlasmicGameBody__RenderFunc(props) {
           data-plasmic-override={overrides.flipSelection}
           amount={["_200"]}
           className={classNames("__wab_instance", sty.flipSelection)}
-          scenario={["airdrop"]}
+          scenario={["firstAid"]}
         />
 
         <AmountSelection

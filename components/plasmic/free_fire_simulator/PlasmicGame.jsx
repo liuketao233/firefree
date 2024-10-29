@@ -98,7 +98,7 @@ function PlasmicGame__RenderFunc(props) {
   };
   
   React.useEffect(() => {
-    setTimeout(fetchData, 1500); // 3秒后重试
+    setTimeout(fetchData, 1200); // 3秒后重试
   }, []); // 空数组表示只在组件挂载时调用一次
   // React.useEffect(() => {
   //   if (apiData) {
