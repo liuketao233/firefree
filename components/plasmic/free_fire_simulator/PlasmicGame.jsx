@@ -105,11 +105,11 @@ function PlasmicGame__RenderFunc(props) {
   //     console.log(apiData, "apiData"); // 在 apiData 更新时打印它的值
   //   }
   // }, [apiData]);
-  const [topUp, setTopUp] = React.useState(10);
+  const [selectedTopup, setSelectedTopup] = React.useState(10);
 
   // 子组件4层选择变化的回调函数
   const handleSelectChange = (value) => {
-    setTopUp(value);
+    setSelectedTopup(value);
     console.log("选中的值: ", value);
   };
   
@@ -165,7 +165,6 @@ function PlasmicGame__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -271,13 +270,15 @@ function PlasmicGame__RenderFunc(props) {
                 props: {
                   onClick: () => handleModalTopupshowUserinfo(),
                 },
+              },
+              diamondsSelection:{
+                props:{
+                  onChange:(value)=>handleSelectChange(value)
+                }
               }
             }}
               data-plasmic-name={"topUp1stStepModal"}
-              data-plasmic-override={{
-                onSelectChange: handleSelectChange, // 将选择变化的回调函数传递给子组件
-                topUp: topUp, // 将选中的值传递给子组件
-              }}
+              data-plasmic-override={overrides.topUp1stStepModal}
               className={classNames("", sty.topUp1stStepModal)}
             />:<TopUp1stStepModal
               data-plasmic-name={"topUp1stStepModal"}

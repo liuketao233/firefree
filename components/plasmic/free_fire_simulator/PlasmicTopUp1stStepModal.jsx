@@ -48,9 +48,9 @@ function useNextRouter() {
   return undefined;
 }
 
-function PlasmicTopUp1stStepModal__RenderFunc(props,onSelectChange, topUp) {
+function PlasmicTopUp1stStepModal__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(props,onSelectChange, topUp,"PlasmicTopUp1stStepModal__RenderFunc");
+  console.log(variants, overrides, forNode,"PlasmicTopUp1stStepModal__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
