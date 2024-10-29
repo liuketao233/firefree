@@ -66,7 +66,7 @@ function PlasmicGameBody__RenderFunc(props) {
     ...args,
     ...variants
   };
-  // const doGame = overrides.doGame;
+  const doGame = overrides.root.props.doGame;
   const __nextRouter = useNextRouter();
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
@@ -83,7 +83,8 @@ function PlasmicGameBody__RenderFunc(props) {
   const handleChoice = (value) => {
     setChoice(value);
     console.log(value, "handleChoice");
-    // setTimeout(submitData,200)
+    
+    setTimeout(doGame(choice,amount,'airdrop'),200)
   };
   const handleAmount = (value) => {
     setAmount(value);
