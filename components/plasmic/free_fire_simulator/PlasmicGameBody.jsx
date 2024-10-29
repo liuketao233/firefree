@@ -73,6 +73,18 @@ function PlasmicGameBody__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+  const [choice, setChoice] = React.useState(3);
+  const [amount, setAmount] = React.useState(100);
+
+  // 回调函数：用于控制 Modal 的显示状态
+  const handleChoice = (value) => {
+    setChoice(value);
+    console.log(value, "handleChoice");
+  };
+  const handleAmount = (value) => {
+    setAmount(value);
+    console.log(value, "handleChoice");
+  };
   return (
     <Stack__
       as={"div"}
@@ -106,9 +118,23 @@ function PlasmicGameBody__RenderFunc(props) {
         />
 
         <FlipSelection
+          overrides={{
+            choiceBackground3:{
+              props: {
+                onClick: () => handleChoice(3),
+              },
+              
+            },
+            choiceBackground4:{
+              props: {
+                onClick: () => handleChoice(4),
+              },
+              
+            }
+          }}
           data-plasmic-name={"flipSelection"}
           data-plasmic-override={overrides.flipSelection}
-          amount={["_200"]}
+          amount={amount}
           className={classNames("__wab_instance", sty.flipSelection)}
           scenario={["airdrop"]}
         />
