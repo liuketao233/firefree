@@ -148,43 +148,14 @@ function PlasmicGameBody__RenderFunc(props) {
 
         <AmountSelection
           overrides={{
-            curentAmount:amount,
-            half:{
-              props:{
-                onclick: () => handleAmountMulti(0.5)
-              }
-            },
-            half3:{
-              props:{
-                onclick: () => handleAmountMulti(0.5)
-              }
-            },
-            double:{
-              props:{
-                onclick: () => handleAmountMulti(2)
-              }
-            },
-            double3:{
-              props:{
-                onclick: () => handleAmountMulti(2)
-              }
-            },
-            _10Times:{
-              props:{
-                onclick: () => handleAmountMulti(10)
-              }
-            },
-            _10Times3:{
-              props:{
-                onclick: () => handleAmountMulti(10)
-              }
-            },
+            curentAmount:amount
           }}
           data-plasmic-name={"amountSelection"}
           data-plasmic-override={overrides.amountSelection}
           className={classNames("__wab_instance", sty.amountSelection)}
           amount={[amount]}
           onAmountChange={handleAmount}
+          onAmountMulti={handleAmountMulti}
         />
 
         {(

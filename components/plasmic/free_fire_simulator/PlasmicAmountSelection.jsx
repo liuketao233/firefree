@@ -287,6 +287,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
               <div className={classNames(projectcss.all, sty.freeBox__qLj4L)}>
                 <div
                   data-plasmic-name={"half"}
+                  onClick={() => overrides.amountSelection.props.onAmountMulti(0.5)}
                   data-plasmic-override={overrides.half}
                   className={classNames(
                     projectcss.all,
@@ -302,6 +303,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
 
                 <div
                   data-plasmic-name={"double"}
+                  onClick={() => overrides.amountSelection.props.onAmountMulti(2)}
                   data-plasmic-override={overrides.double}
                   className={classNames(
                     projectcss.all,
@@ -317,6 +319,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
 
                 <div
                   data-plasmic-name={"_10Times"}
+                  onClick={() => overrides.amountSelection.props.onAmountMulti(10)}
                   data-plasmic-override={overrides._10Times}
                   className={classNames(
                     projectcss.all,
@@ -498,6 +501,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                     >
                       <div
                         data-plasmic-name={"half3"}
+                        onClick={() => overrides.amountSelection.props.onAmountMulti(0.5)}
                         data-plasmic-override={overrides.half3}
                         className={classNames(
                           projectcss.all,
@@ -516,6 +520,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
 
                       <div
                         data-plasmic-name={"double3"}
+                        onClick={() => overrides.amountSelection.props.onAmountMulti(2)}
                         data-plasmic-override={overrides.double3}
                         className={classNames(
                           projectcss.all,
@@ -534,6 +539,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
 
                       <div
                         data-plasmic-name={"_10Times3"}
+                        onClick={() => overrides.amountSelection.props.onAmountMulti(10)}
                         data-plasmic-override={overrides._10Times3}
                         className={classNames(
                           projectcss.all,
