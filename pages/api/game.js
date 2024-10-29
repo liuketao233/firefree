@@ -6,14 +6,14 @@ import { getSession } from 'next-auth/react';
 export default async function handler(req, res) {
   const client = await clientPromise;
   const db = client.db("sample_mflix");
-  const session = await getSession();
+  const session = await getSession({ req });
   if(!session){
     res.json({ status: 500, message: 'User unfind' }).end();
   }
     
   switch (req.method) {
     case 'GET':
-      res.json({ status: 200 });
+      res.json({ status: 200,session:session });
       break;
     case 'POST':
       const gameData = req.body;
