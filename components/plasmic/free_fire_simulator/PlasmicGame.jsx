@@ -197,7 +197,7 @@ function PlasmicGame__RenderFunc(props) {
           className={classNames(projectcss.all, sty.mainContainer)}
         >
           <TopNavBar overrides={{
-              balance:apiData.data[0].balance,
+              balance:apiData && apiData.data ?apiData.data[0].balance : 0,
               profile: {
                 props: {
                   onClick: () => handleModalVisibility(!isModalVisible),
