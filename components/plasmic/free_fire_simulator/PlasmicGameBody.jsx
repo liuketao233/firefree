@@ -74,7 +74,7 @@ function PlasmicGameBody__RenderFunc(props) {
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
   const [choice, setChoice] = React.useState(3);
-  const [amount, setAmount] = React.useState("_100");
+  const [amount, setAmount] = React.useState("_2000");
 
   // 回调函数：用于控制 Modal 的显示状态
   const handleChoice = (value) => {
