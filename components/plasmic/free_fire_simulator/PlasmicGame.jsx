@@ -101,7 +101,7 @@ function PlasmicGame__RenderFunc(props) {
   };
   const submitData = async (choice,amount,gametype) => {
     try {
-      const response = await fetch('/api/game', {
+      const response = await fetch('/api/server', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
