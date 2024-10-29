@@ -60,6 +60,7 @@ function useNextRouter() {
 
 function PlasmicFlipSelection__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(variants, overrides, forNode,"PlasmicFlipSelection__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
