@@ -73,6 +73,7 @@ function PlasmicGameBody__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+  console.log(overrides,"PlasmicGameBody__RenderFunc");
   const [choice, setChoice] = React.useState(3);
   const [amount, setAmount] = React.useState(100);
 
@@ -87,7 +88,8 @@ function PlasmicGameBody__RenderFunc(props) {
   };
   const handleAmountMulti = (multi) => {
     let value = Math.round(amount*multi);
-    setAmount(value < 100?100:value);
+    let balance = overrides.balance;
+    setAmount(value < 100?100:(value>balance?balance:value));
     console.log(value, "handleAmountMulti");
   };
   return (
