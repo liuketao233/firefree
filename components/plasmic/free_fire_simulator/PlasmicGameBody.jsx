@@ -103,6 +103,7 @@ function PlasmicGameBody__RenderFunc(props) {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // 确保带上 cookie
         body: JSON.stringify({ choice:choice, amount:amount,gametype:"airdrop" }),
       });
 
