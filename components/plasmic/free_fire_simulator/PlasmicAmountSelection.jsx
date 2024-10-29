@@ -157,7 +157,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 className={classNames(projectcss.all, sty.freeBox__gq3Y2)}
               >
                 <_01KButton
-                  onClick={() => overrides.props.onAmountChange(100)}
+                  onClick={() => overrides.amountSelection.props.onAmountChange(100)}
                   chosen={
                     hasVariant($state, "amount", "unnamedVariant")
                       ? true
@@ -174,7 +174,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 />
 
                 <_1KButton
-                  onClick={() => overrides.props.onAmountChange(1000)}
+                  onClick={() => overrides.amountSelection.props.onAmountChange(1000)}
                   className={classNames(
                     "__wab_instance",
                     sty._1KButton___5ZnaA,
@@ -186,7 +186,7 @@ function PlasmicAmountSelection__RenderFunc(props) {
                 />
 
                 <_10KButton
-                  onClick={() => overrides.props.onAmountChange(10000)}
+                  onClick={() => overrides.amountSelection.props.onAmountChange(10000)}
                   className={classNames(
                     "__wab_instance",
                     sty._10KButton__bChRc,
