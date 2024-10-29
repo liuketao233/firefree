@@ -128,7 +128,7 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
           }
         />
 
-        <DiamondOptionBar
+        {/* <DiamondOptionBar
           data-plasmic-name={"diamondOptionBar"}
           data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__ez9Qe)}
@@ -140,15 +140,16 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
               ? ["_2ndBar"]
               : ["_2ndBar"]
           }
-        />
+        /> */}
 
-        {/* <DiamondOptionBar
+        <DiamondOptionBar
+          
           data-plasmic-name={"diamondOptionBar"}
           data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__xCfKa)}
           topUp={[]}
           withdraw={["_3rdBar"]}
-        /> */}
+        />
       </Stack__>
     </div>
   );
