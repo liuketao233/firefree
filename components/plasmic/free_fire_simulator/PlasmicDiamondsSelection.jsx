@@ -113,6 +113,7 @@ function PlasmicDiamondsSelection__RenderFunc(props) {
         className={classNames(projectcss.all, sty.freeBox)}
       >
         <DiamondOptionBar 
+          topUp='_2ndBar'
           data-plasmic-name={"diamondOptionBar"}
           data-plasmic-override={overrides.diamondOptionBar}
           className={classNames("__wab_instance", sty.diamondOptionBar__eWhPu)}
