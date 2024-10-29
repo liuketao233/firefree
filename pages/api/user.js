@@ -18,11 +18,6 @@ export default async function handler(req, res) {
       const users = await db.collection('users').find({email:user.email}).toArray();
       res.json({ status: 200, data: users });
       break;
-    case 'POST':
-      const newUser = req.body;
-      await db.collection('users').insertOne(newUser);
-      res.json({ status: 200, message: 'User added!' });
-      break;
     default:
       res.status(405).end(); // Method Not Allowed
       break;
