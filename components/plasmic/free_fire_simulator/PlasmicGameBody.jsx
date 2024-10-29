@@ -85,6 +85,11 @@ function PlasmicGameBody__RenderFunc(props) {
     setAmount(value);
     console.log(value, "handleAmount");
   };
+  const handleAmountMulti = (multi) => {
+    let value = Math.round(amount*multi);
+    setAmount(value < 100?100:value);
+    console.log(value, "handleAmountMulti");
+  };
   return (
     <Stack__
       as={"div"}
@@ -143,7 +148,37 @@ function PlasmicGameBody__RenderFunc(props) {
 
         <AmountSelection
           overrides={{
-            curentAmount:amount
+            curentAmount:amount,
+            half:{
+              props:{
+                onclick: () => handleAmountMulti(0.5)
+              }
+            },
+            half3:{
+              props:{
+                onclick: () => handleAmountMulti(0.5)
+              }
+            },
+            double:{
+              props:{
+                onclick: () => handleAmountMulti(2)
+              }
+            },
+            double3:{
+              props:{
+                onclick: () => handleAmountMulti(2)
+              }
+            },
+            _10Times:{
+              props:{
+                onclick: () => handleAmountMulti(10)
+              }
+            },
+            _10Times3:{
+              props:{
+                onclick: () => handleAmountMulti(10)
+              }
+            },
           }}
           data-plasmic-name={"amountSelection"}
           data-plasmic-override={overrides.amountSelection}
