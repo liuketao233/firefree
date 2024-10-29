@@ -101,15 +101,8 @@ function PlasmicGame__RenderFunc(props) {
   };
   const submitData = async (choice,amount,gametype) => {
     try {
-      const response = await fetch('/api/server', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include', // 确保带上 cookie
-        body: JSON.stringify({ choice:choice, amount:amount,gametype:gametype }),
-      });
-
+      let url="/api/game?choice="+choice+"&amount="+amount+"&gametype="+gametype;
+      const response = await fetch(url);
       const result = await response.json();
       console.log(result,"submitData")
     } catch (error) {

@@ -13,6 +13,7 @@ export default async function handler(req, res) {
     
   switch (req.method) {
     case 'GET':
+      
       res.json({ status: 200,session:session });
       break;
     case 'POST':
