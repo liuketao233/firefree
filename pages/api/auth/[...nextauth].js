@@ -12,6 +12,9 @@ export default async function handler(req, res) {
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       }),
     ],
+    session: {
+      strategy: 'jwt',  // 使用 JWT 作为 session 管理
+    },
     callbacks: {
       async signIn({ user, account, profile }) {
         console.log(user, account, profile)
