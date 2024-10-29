@@ -6,7 +6,7 @@ import { getSession } from 'next-auth/react';
 export default async function handler(req, res) {
   const client = await clientPromise;
   const db = client.db("sample_mflix");
-  const session = await getSession({ req });
+  const session = await getSession();
   if(!session){
     res.json({ status: 500, message: 'User unfind' }).end();
   }
