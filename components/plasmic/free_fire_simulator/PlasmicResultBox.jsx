@@ -43,6 +43,7 @@ function useNextRouter() {
 
 function PlasmicResultBox__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicResultBox__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

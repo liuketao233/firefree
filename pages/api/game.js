@@ -88,7 +88,7 @@ export default async function handler(req, res) {
           // Update game record to reflect win/loss and prize
           const updatedGameRecord = await db.collection('games').findOneAndUpdate(
             { _id: gameResult.insertedId },
-            { $set: { status: isWin ? 'won' : 'lost', prize: prizeAmount } },
+            { $set: { status: isWin ? 'win' : 'lose', prize: prizeAmount } },
             { returnDocument: 'after', session: mongoSession }
           );
 

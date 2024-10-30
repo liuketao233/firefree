@@ -97,10 +97,10 @@ function PlasmicRecentRecords__RenderFunc(props) {
           key={key}
           className={classNames("__wab_instance", sty[`resultBox__${key}`])}
           lose={
-            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "lost" ? [game.gmetype] : undefined
+            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "lose" ? [game.gmetype] : undefined
           }
           win={
-            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "won" ? [game.gmetype] : undefined
+            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "win" ? [game.gmetype] : undefined
           }
         />
       ))}
