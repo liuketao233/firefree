@@ -93,8 +93,12 @@ function PlasmicRecentRecords__RenderFunc(props) {
       )}
     >
       {Object.entries(updatedGameList).map(([key, game]) => (
+        <div key={key}>
+        <p>游戏类型: {game.gametype}</p>
+        <p>状态: {game.status}</p>
+        {/* 你可以输出其他属性，具体取决于 game 对象的结构 */}
         <ResultBox
-          key={key}
+          // key={key}
           className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
           lose={
             hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "lose" ? [game.gametype] : undefined
@@ -103,6 +107,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "win" ? [game.gametype] : undefined
           }
         />
+        </div>
       ))}
       {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox___4E76P)}
