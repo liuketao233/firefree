@@ -238,7 +238,15 @@ function PlasmicGame__RenderFunc(props) {
             data-plasmic-name={"gameBody"}
             overrides={{
               balance:apiData && apiData.data ?apiData.data[0].balance : 0,
-              recentRecords:gameArray
+              infoArea:{
+                props:{
+                  recentRecords:{
+                    props:{
+                      resultArea:gameArray
+                    }
+                  }
+                }
+              }
             }}
             data-plasmic-override={overrides.gameBody}
             className={classNames("__wab_instance", sty.gameBody)}
