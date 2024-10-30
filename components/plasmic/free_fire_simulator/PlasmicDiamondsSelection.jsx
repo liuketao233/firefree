@@ -47,7 +47,7 @@ function useNextRouter() {
 
 function PlasmicDiamondsSelection__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(props,"PlasmicDiamondsSelection__RenderFunc");
+  // console.log(props,"PlasmicDiamondsSelection__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

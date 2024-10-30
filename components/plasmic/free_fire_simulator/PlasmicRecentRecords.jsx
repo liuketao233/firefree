@@ -95,7 +95,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
       {Object.entries(updatedGameList).map(([key, game]) => (
         <ResultBox
           key={key}
-          className={classNames("__wab_instance", sty[`resultBox__${key}`])}
+          className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
           lose={
             hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "lose" ? [game.gametype] : undefined
           }
