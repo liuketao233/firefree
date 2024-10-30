@@ -50,7 +50,7 @@ function useNextRouter() {
 
 function PlasmicTopUp1stStepModal__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(variants, overrides, forNode,"PlasmicTopUp1stStepModal__RenderFunc");
+  // console.log(variants, overrides, forNode,"PlasmicTopUp1stStepModal__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

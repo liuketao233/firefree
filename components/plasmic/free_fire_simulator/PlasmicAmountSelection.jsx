@@ -54,7 +54,7 @@ function useNextRouter() {
 
 function PlasmicAmountSelection__RenderFunc(props) {
   const { variants, overrides, forNode,onAmountChange } = props;
-  console.log(props,"PlasmicAmountSelection__RenderFunc")
+  // console.log(props,"PlasmicAmountSelection__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

@@ -50,7 +50,7 @@ function useNextRouter() {
 
 function PlasmicGameBody__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(props,"PlasmicGameBody__RenderFunc")
+  // console.log(props,"PlasmicGameBody__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -75,26 +75,26 @@ function PlasmicGameBody__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
-  console.log(overrides,"PlasmicGameBody__RenderFunc");
+  // console.log(overrides,"PlasmicGameBody__RenderFunc");
   const [choice, setChoice] = React.useState(3);
   const [amount, setAmount] = React.useState(100);
 
   // 回调函数：用于控制 Modal 的显示状态
   const handleChoice = (value) => {
     setChoice(value);
-    console.log(value, "handleChoice");
+    // console.log(value, "handleChoice");
     
     setTimeout(doGame(choice,amount,'airdrop'),200)
   };
   const handleAmount = (value) => {
     setAmount(value);
-    console.log(value, "handleAmount");
+    // console.log(value, "handleAmount");
   };
   const handleAmountMulti = (multi) => {
     let value = Math.round(amount*multi);
     let balance = overrides.balance;
     setAmount(value < 100?100:(value>balance?balance:value));
-    console.log(value, "handleAmountMulti");
+    // console.log(value, "handleAmountMulti");
   };
 
   

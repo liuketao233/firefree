@@ -112,7 +112,7 @@ function PlasmicGame__RenderFunc(props) {
         addNewData(result.game)
         setTimeout(fetchData, 500)
       }
-      console.log(result,"submitData")
+      // console.log(result,"submitData")
       
     } catch (error) {
       console.error('fail', error);
@@ -135,7 +135,7 @@ function PlasmicGame__RenderFunc(props) {
   // 子组件4层选择变化的回调函数
   const handleSelectChange = (value) => {
     setSelectedTopup(value);
-    console.log("选中的值: ", value);
+    // console.log("选中的值: ", value);
   };
   
   const args = React.useMemo(
