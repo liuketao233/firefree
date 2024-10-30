@@ -101,10 +101,10 @@ function PlasmicRecentRecords__RenderFunc(props) {
           // key={key}
           className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
           lose={
-            game.status === "lose" ? [game.gametype] : []
+            game.status === "lose" ? [game.gametype] : [""]
           }
           win={
-            game.status === "win" ? [game.gametype] : []
+            game.status === "win" ? [game.gametype] : [""]
           }
         />
         // </div>
@@ -137,19 +137,24 @@ function PlasmicRecentRecords__RenderFunc(props) {
         }
       /> */}
 
-      {/* <ResultBox
+      <ResultBox
         className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
         lose={
-          hasVariant(globalVariants, "desktopBase", "desktopOnly")
-            ? ["vehicle"]
-            : ["firstAid"]
+          ["airdrop"]
         }
         win={
-          hasVariant(globalVariants, "desktopBase", "desktopOnly")
-            ? []
-            : undefined
+          []
         }
-      /> */}
+      />
+      <ResultBox
+        className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
+        lose={
+          [""]
+        }
+        win={
+          ["airdrop"]
+        }
+      />
     </Stack__>
   );
 }
