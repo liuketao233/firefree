@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         case 'GET':
           const { choice, amount, gametype } = req.query;
           if (!choice || !amount || !gametype) {
-            res.status(200).json({ status: 400, message: 'Missing required parameters' });
+            res.status(400).json({ status: 400, message: 'Missing required parameters' });
             return;
           }
 
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
           // Update user balance
           const newBalance = parseFloat((user.balance - parseFloat(amount)).toFixed(2));
           if (newBalance < 0) {
-            res.status(200).json({ status: 400, message: 'Insufficient balance' });
+            res.status(400).json({ status: 400, message: 'Insufficient balance' });
             return;
           }
 
