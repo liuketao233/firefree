@@ -46,7 +46,7 @@ function useNextRouter() {
 
 function PlasmicRecentRecords__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(props,"PlasmicRecentRecords__RenderFunc")
+  // console.log(props,"PlasmicRecentRecords__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
@@ -72,7 +72,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
   });
   let gameList = overrides.resultArea.props;
   const { className, ...updatedGameList } = gameList;
-  console.log(updatedGameList,"updatedGameList")
+  // console.log(updatedGameList,"updatedGameList")
   return (
     <Stack__
       as={"div"}
@@ -132,7 +132,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
         }
       /> */}
 
-      <ResultBox
+      {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
         lose={
           hasVariant(globalVariants, "desktopBase", "desktopOnly")
@@ -144,7 +144,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             ? []
             : undefined
         }
-      />
+      /> */}
     </Stack__>
   );
 }
