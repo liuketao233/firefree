@@ -97,10 +97,10 @@ function PlasmicRecentRecords__RenderFunc(props) {
           key={key}
           className={classNames("__wab_instance", sty[`resultBox__${key}`])}
           lose={
-            game.status === "lose" ? [game.gmetype] : undefined
+            game.status === "lost" ? [game.gmetype] : undefined
           }
           win={
-            game.status === "win" ? [game.gmetype] : undefined
+            game.status === "won" ? [game.gmetype] : undefined
           }
         />
       ))}
