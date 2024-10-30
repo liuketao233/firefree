@@ -44,7 +44,7 @@ function useNextRouter() {
 
 function PlasmicInfoArea__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
-  console.log(props,"PlasmicInfoArea__RenderFunc");
+  // console.log(props,"PlasmicInfoArea__RenderFunc");
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>

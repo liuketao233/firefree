@@ -46,6 +46,7 @@ function useNextRouter() {
 
 function PlasmicRecentRecords__RenderFunc(props) {
   const { variants, overrides, forNode } = props;
+  console.log(props,"PlasmicRecentRecords__RenderFunc")
   const $translator = usePlasmicTranslator?.();
   const args = React.useMemo(
     () =>
