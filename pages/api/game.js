@@ -36,7 +36,7 @@ export default async function handler(req, res) {
           }
 
           // Update user balance
-          const newBalance = user.balance - parseFloat(amount);
+          const newBalance = Math.round(user.balance - parseFloat(amount) , 2) ;
           if (newBalance < 0) {
             res.status(400).json({ status: 400, message: 'Insufficient balance' });
             return;
