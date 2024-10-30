@@ -95,12 +95,12 @@ function PlasmicRecentRecords__RenderFunc(props) {
       {Object.entries(updatedGameList).map(([key, game]) => (
         <ResultBox
           key={key}
-          className={classNames("__wab_instance", sty[`resultBox__${game.status}`])}
+          className={classNames("__wab_instance", sty[`resultBox__${key}`])}
           lose={
-            game.status === "lost" ? [game.gmetype] : undefined
+            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "lost" ? [game.gmetype] : undefined
           }
           win={
-            game.status === "won" ? [game.gmetype] : undefined
+            hasVariant(globalVariants, "desktopBase", "desktopOnly") && game.status === "won" ? [game.gmetype] : undefined
           }
         />
       ))}
@@ -132,7 +132,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
         }
       /> */}
 
-      <ResultBox
+      {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
         lose={
           hasVariant(globalVariants, "desktopBase", "desktopOnly")
@@ -144,7 +144,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             ? []
             : undefined
         }
-      />
+      /> */}
     </Stack__>
   );
 }
