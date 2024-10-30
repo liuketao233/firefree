@@ -66,6 +66,10 @@ function PlasmicGame__RenderFunc(props) {
   let Profile_instance = "__wab_instance";
   const [isModalVisible, setModalVisible] = React.useState(false);
   const [isModalTopup, setModalTopup] = React.useState(false);
+  const [gameArray, setGameArray] = React.useState([]);
+  const addNewData = (newData) => {
+    setGameArray((prevArray) => [newData, ...prevArray]);
+  };
 
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalVisibility = (isVisible) => {
@@ -104,8 +108,12 @@ function PlasmicGame__RenderFunc(props) {
       let url="/api/game?choice="+choice+"&amount="+amount+"&gametype="+gametype;
       const response = await fetch(url);
       const result = await response.json();
+      if(result.status == 200){
+        addNewData(result.game)
+        setTimeout(fetchData, 500)
+      }
       console.log(result,"submitData")
-      setTimeout(fetchData, 500)
+      
     } catch (error) {
       console.error('fail', error);
     }
@@ -230,6 +238,11 @@ function PlasmicGame__RenderFunc(props) {
             data-plasmic-name={"gameBody"}
             overrides={{
               balance:apiData && apiData.data ?apiData.data[0].balance : 0,
+              infoArea:{
+                props:{
+                  recentRecords:gameArray
+                }
+              }
             }}
             data-plasmic-override={overrides.gameBody}
             className={classNames("__wab_instance", sty.gameBody)}
