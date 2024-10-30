@@ -112,7 +112,11 @@ function PlasmicGame__RenderFunc(props) {
   const updateUserInfo = () => {
     fetchData();
   };
+  const [isSubmitting, setIsSubmitting] = useState(false); // 控制按钮禁用状态
+
   const submitData = async (choice,amount,gametype) => {
+    if (isSubmitting) return; // 防止按钮在提交过程中再次点击
+    setIsSubmitting(true); // 设置按钮为禁用状态
     try {
       let url="/api/game?choice="+choice+"&amount="+amount+"&gametype="+gametype;
       const response = await fetch(url);
@@ -125,6 +129,8 @@ function PlasmicGame__RenderFunc(props) {
       
     } catch (error) {
       console.error('fail', error);
+    } finally {
+      setIsSubmitting(false); // 重新启用按钮
     }
   };
   const doGame = (choice,amount,gametype) =>{
