@@ -73,7 +73,7 @@ export default async function handler(req, res) {
 
           // Determine if the game is won (example logic)
           const isWin = Math.random() > 0.5; // 50% chance to win (example)
-          const prizeAmount = isWin ? parseFloat(amount) * 1.9804 : 0;
+          const prizeAmount = isWin ? Math.round(amount * 1.9804,2) : 0;
           const updatedBalance = isWin ? newBalance + prizeAmount : newBalance;
 
           // Update user balance if won

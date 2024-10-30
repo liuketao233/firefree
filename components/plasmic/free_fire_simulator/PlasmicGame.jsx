@@ -105,6 +105,7 @@ function PlasmicGame__RenderFunc(props) {
       const response = await fetch(url);
       const result = await response.json();
       console.log(result,"submitData")
+      setTimeout(fetchData, 500)
     } catch (error) {
       console.error('fail', error);
     }
