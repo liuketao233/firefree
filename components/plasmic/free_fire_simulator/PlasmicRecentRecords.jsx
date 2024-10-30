@@ -70,6 +70,8 @@ function PlasmicRecentRecords__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+  let gameList = overrides.resultArea.props;
+  console.log(gameList,"gameList")
   return (
     <Stack__
       as={"div"}
