@@ -66,8 +66,9 @@ function PlasmicGame__RenderFunc(props) {
   let Profile_instance = "__wab_instance";
   const [isModalVisible, setModalVisible] = React.useState(false);
   const [isModalTopup, setModalTopup] = React.useState(false);
+  const [isModalRecords, setModalRecords] = React.useState(false);
   const [gameArray, setGameArray] = React.useState([]);
-  const MAX_ITEMS = 7; // 设置最大数量
+  const MAX_ITEMS = 6; // 设置最大数量
   const addNewData = (newData) => {
     setGameArray((prevArray) => {
       // 将新数据放在开头
@@ -94,6 +95,15 @@ function PlasmicGame__RenderFunc(props) {
   const handleModalTopupshowUserinfo = () =>{
     setModalVisible(true);
     setModalTopup(false);
+  }
+  const handleModalRecords = (isShow) => {
+    setModalVisible(false);
+    setModalRecords(isShow);
+    // console.log(isModalVisible, "isVisible");
+  };
+  const handleModalRecordsshowUserinfo = () =>{
+    setModalVisible(true);
+    setModalRecords(false);
   }
   const [apiData, setApiData] = React.useState(null);
 
@@ -301,6 +311,11 @@ function PlasmicGame__RenderFunc(props) {
                   onClick: () => handleModalTopup(true),
                 },
               },
+              historyRecords2:{
+                props:{
+                  onClick: () => handleModalRecords(true),
+                }
+              }
             }}
             data-plasmic-name={"profileModal"}
             data-plasmic-override={overrides.profileModal}
@@ -365,11 +380,31 @@ function PlasmicGame__RenderFunc(props) {
             className={classNames("__wab_instance", sty.withdraw3rdStepModal)}
           />
 
-          <AllRecordsModal
+
+          {
+            isModalRecords === true ? <AllRecordsModal overrides={{
+              closeModal: {
+                props: {
+                  onClick: () => handleModalRecords(false),
+                },
+              },
+              closeModal2: {
+                props: {
+                  onClick: () => handleModalRecordsshowUserinfo(),
+                },
+              },
+            }}
+            
+            data-plasmic-name={"allRecordsModal"}
+            data-plasmic-override={overrides.allRecordsModal}
+            className={classNames("", sty.allRecordsModal)}
+          />:<AllRecordsModal
             data-plasmic-name={"allRecordsModal"}
             data-plasmic-override={overrides.allRecordsModal}
             className={classNames("__wab_instance", sty.allRecordsModal)}
           />
+          }
+          
         </div>
       </div>
     </React.Fragment>
