@@ -137,7 +137,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
         }
       /> */}
 
-      <ResultBox
+      {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
         lose={
           ["airdrop"]
@@ -154,7 +154,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
         win={
           ["airdrop"]
         }
-      />
+      /> */}
     </Stack__>
   );
 }
