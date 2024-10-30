@@ -95,7 +95,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
       {Object.entries(updatedGameList).map(([key, game]) => (
         <ResultBox
           key={key}
-          className={classNames("__wab_instance", sty[`resultBox__${key}`])}
+          className={classNames("__wab_instance", sty[`resultBox__${game.status}`])}
           lose={
             game.status === "lost" ? [game.gmetype] : undefined
           }
@@ -104,7 +104,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
           }
         />
       ))}
-      <ResultBox
+      {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox___4E76P)}
         lose={
           hasVariant(globalVariants, "desktopBase", "desktopOnly")
@@ -130,7 +130,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             ? ["firstAid"]
             : ["airdrop"]
         }
-      />
+      /> */}
 
       <ResultBox
         className={classNames("__wab_instance", sty.resultBox__xZ2Du)}
