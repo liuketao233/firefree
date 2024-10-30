@@ -84,6 +84,10 @@ function PlasmicGame__RenderFunc(props) {
   // 回调函数：用于控制 Modal 的显示状态
   const handleModalVisibility = (isVisible) => {
     setModalVisible(isVisible);
+    if(isVisible === true){
+      setModalTopup(false);
+      setModalRecords(false);
+    }
     // console.log(isModalVisible, "isVisible");
   };
   // 回调函数：用于控制 Modal 的显示状态
@@ -162,6 +166,8 @@ function PlasmicGame__RenderFunc(props) {
     setSelectedTopup(value);
     // console.log("选中的值: ", value);
   };
+
+  //历史记录页面查询
   
   const args = React.useMemo(
     () =>
@@ -398,6 +404,7 @@ function PlasmicGame__RenderFunc(props) {
             data-plasmic-name={"allRecordsModal"}
             data-plasmic-override={overrides.allRecordsModal}
             className={classNames("", sty.allRecordsModal)}
+            balanceRecords={"gameRecords"}
           />:<AllRecordsModal
             data-plasmic-name={"allRecordsModal"}
             data-plasmic-override={overrides.allRecordsModal}
