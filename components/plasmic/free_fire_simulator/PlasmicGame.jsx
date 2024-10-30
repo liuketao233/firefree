@@ -67,8 +67,17 @@ function PlasmicGame__RenderFunc(props) {
   const [isModalVisible, setModalVisible] = React.useState(false);
   const [isModalTopup, setModalTopup] = React.useState(false);
   const [gameArray, setGameArray] = React.useState([]);
+  const MAX_ITEMS = 7; // 设置最大数量
   const addNewData = (newData) => {
-    setGameArray((prevArray) => [newData, ...prevArray]);
+    setGameArray((prevArray) => {
+      // 将新数据放在开头
+      const updatedArray = [newData, ...prevArray];
+      // 如果超过最大数量，移除最后一个元素
+      if (updatedArray.length > MAX_ITEMS) {
+        updatedArray.pop();
+      }
+      return updatedArray;
+    });
   };
 
   // 回调函数：用于控制 Modal 的显示状态

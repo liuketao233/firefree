@@ -104,7 +104,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
           }
         />
       ))}
-      {/* <ResultBox
+      <ResultBox
         className={classNames("__wab_instance", sty.resultBox___4E76P)}
         lose={
           hasVariant(globalVariants, "desktopBase", "desktopOnly")
@@ -144,7 +144,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             ? []
             : undefined
         }
-      /> */}
+      />
     </Stack__>
   );
 }
