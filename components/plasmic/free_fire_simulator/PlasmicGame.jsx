@@ -112,7 +112,7 @@ function PlasmicGame__RenderFunc(props) {
   const updateUserInfo = () => {
     fetchData();
   };
-  const [isSubmitting, setIsSubmitting] = useState(false); // 控制按钮禁用状态
+  const [isSubmitting, setIsSubmitting] = React.useState(false); // 控制按钮禁用状态
 
   const submitData = async (choice,amount,gametype) => {
     if (isSubmitting) return; // 防止按钮在提交过程中再次点击
