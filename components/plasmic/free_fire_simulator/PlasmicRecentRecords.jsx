@@ -71,7 +71,8 @@ function PlasmicRecentRecords__RenderFunc(props) {
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
   let gameList = overrides.resultArea.props;
-  console.log(gameList,"gameList")
+  const { className, ...updatedGameList } = gameList;
+  console.log(updatedGameList,"updatedGameList")
   return (
     <Stack__
       as={"div"}
@@ -91,7 +92,19 @@ function PlasmicRecentRecords__RenderFunc(props) {
         sty.resultArea
       )}
     >
-      <ResultBox
+      {Object.entries(updatedGameList).map(([key, game]) => (
+        <ResultBox
+          key={key}
+          className={classNames("__wab_instance", sty[`resultBox__${key}`])}
+          lose={
+            game.status === "lose" ? [game.gmetype] : undefined
+          }
+          win={
+            game.status === "win" ? [game.gmetype] : undefined
+          }
+        />
+      ))}
+      {/* <ResultBox
         className={classNames("__wab_instance", sty.resultBox___4E76P)}
         lose={
           hasVariant(globalVariants, "desktopBase", "desktopOnly")
@@ -131,7 +144,7 @@ function PlasmicRecentRecords__RenderFunc(props) {
             ? []
             : undefined
         }
-      />
+      /> */}
     </Stack__>
   );
 }
