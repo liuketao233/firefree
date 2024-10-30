@@ -36,7 +36,7 @@ export default async function handler(req, res) {
           }
 
           // Update user balance
-          const newBalance = Math.round(user.balance - parseFloat(amount) , 2) ;
+          const newBalance = parseFloat((user.balance - parseFloat(amount)).toFixed(2));
           if (newBalance < 0) {
             res.status(400).json({ status: 400, message: 'Insufficient balance' });
             return;
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
           const gameRecord = {
             email,
             choice,
-            amount: parseFloat(amount),
+            amount: parseFloat(parseFloat(amount).toFixed(2)),
             gametype,
             status: 'pending',
             createdAt: new Date(),
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
           const transactionRecord = {
             email,
             type: 'debit',
-            amount: parseFloat(amount),
+            amount: parseFloat(parseFloat(amount).toFixed(2)),
             previousBalance: user.balance,
             newBalance: newBalance,
             description: `Game participation: ${gametype}`,
@@ -73,8 +73,8 @@ export default async function handler(req, res) {
 
           // Determine if the game is won (example logic)
           const isWin = Math.random() > 0.5; // 50% chance to win (example)
-          const prizeAmount = isWin ? Math.round(amount * 1.9804,2) : 0;
-          const updatedBalance = isWin ? newBalance + prizeAmount : newBalance;
+          const prizeAmount = parseFloat((isWin ? parseFloat(amount) * 1.9804 : 0).toFixed(2));
+          const updatedBalance = parseFloat((isWin ? newBalance + prizeAmount : newBalance).toFixed(2));
 
           // Update user balance if won
           if (isWin) {
