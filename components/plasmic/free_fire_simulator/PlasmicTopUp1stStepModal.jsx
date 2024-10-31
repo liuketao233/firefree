@@ -76,9 +76,10 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  //**新增代码 */
+  const [selectedAmount, setSelectedAmount] = React.useState<number | null>(null);
+  const [selectedPrice, setSelectedPrice] = React.useState<number | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
 
   const handleSelect = useCallback((amount, price) => {
     try {
@@ -95,6 +96,7 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
   if (error) {
     return <div className="text-red-500">{error}</div>;
   }
+  //**结束 */
   return (
     <Stack__
       as={"div"}
