@@ -14,10 +14,10 @@ const options = [
   { amount: 2000000, price: 2000.0, value: 'diamond_2000000' },
 ];
 
-const diamondIconUrl =
-  '../public/diamond.png';
-const chestImageUrl =
-  '../public/plasmic/free_fire_simulator/images/diamonds1.png';
+// const diamondIconUrl =
+//   '../public/diamond.png';
+// const chestImageUrl =
+//   '../public/plasmic/free_fire_simulator/images/diamonds1.png';
 
 function DiamondSelector({ onSelect }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -52,7 +52,7 @@ function DiamondSelector({ onSelect }) {
             <div className="grid grid-rows-[auto_1fr_auto] h-full">
               <div className="flex items-center justify-center mb-1">
                 <Image
-                  src={diamondIconUrl}
+                  src="../public/diamond.png"
                   alt="钻石"
                   width={16}
                   height={16}
@@ -64,7 +64,7 @@ function DiamondSelector({ onSelect }) {
               </div>
               <div className="relative w-full aspect-square mb-1">
                 <Image
-                  src={chestImageUrl}
+                  src="../public/plasmic/free_fire_simulator/images/diamonds1.png"
                   alt="宝箱"
                   fill
                   className="object-contain"
