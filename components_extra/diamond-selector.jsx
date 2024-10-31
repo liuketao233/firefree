@@ -52,7 +52,7 @@ function DiamondSelector({ onSelect }) {
             <div className="grid grid-rows-[auto_1fr_auto] h-full">
               <div className="flex items-center justify-center mb-1">
                 <Image
-                  src={diamondIconUrl}
+                  src={[diamondIconUrl]}
                   alt="钻石"
                   width={16}
                   height={16}
@@ -64,7 +64,7 @@ function DiamondSelector({ onSelect }) {
               </div>
               <div className="relative w-full aspect-square mb-1">
                 <Image
-                  src={chestImageUrl}
+                  src={[chestImageUrl]}
                   alt="宝箱"
                   fill
                   className="object-contain"
