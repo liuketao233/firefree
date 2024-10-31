@@ -77,9 +77,9 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
   //**新增代码 */
-  const [selectedAmount, setSelectedAmount] = React.useState<number | null>(null);
-  const [selectedPrice, setSelectedPrice] = React.useState<number | null>(null);
-  const [error, setError] = React.useState<string | null>(null);
+  const [selectedAmount, setSelectedAmount] = React.useState(null);
+  const [selectedPrice, setSelectedPrice] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
   const handleSelect = useCallback((amount, price) => {
     try {
