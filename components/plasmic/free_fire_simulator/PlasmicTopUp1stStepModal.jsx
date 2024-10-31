@@ -21,6 +21,8 @@ import {
   usePlasmicTranslator
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import DiamondSelector from '../../../components_extra/diamond-selector';
+
 import DiamondsSelection from "../../DiamondsSelection"; // plasmic-import: rNJR5WH_MPfP/component
 import NextButton from "../../NextButton"; // plasmic-import: Av2xkV_SUoiq/component
 import { useScreenVariants as useScreenVariants_2BvNreuf1Eto } from "./PlasmicGlobalVariant__DesktopBase"; // plasmic-import: 2BVNreuf1ETO/globalVariant
@@ -74,6 +76,25 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
   const globalVariants = ensureGlobalVariants({
     desktopBase: useScreenVariants_2BvNreuf1Eto()
   });
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSelect = useCallback((amount, price) => {
+    try {
+      setSelectedAmount(amount);
+      setSelectedPrice(price);
+      console.log(`选择了 ${amount} 钻石，价格为 USDT ${price}`);
+      setError(null);
+    } catch (err) {
+      console.error('选择钻石时出错:', err);
+      setError('选择钻石时出现错误，请重试。');
+    }
+  }, []);
+
+  if (error) {
+    return <div className="text-red-500">{error}</div>;
+  }
   return (
     <Stack__
       as={"div"}
@@ -127,11 +148,19 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__dtluo)}
         >
-          <DiamondsSelection
+          <DiamondSelector onSelect={handleSelect} />
+          {selectedAmount && selectedPrice && (
+            <div className="mt-6 p-4 bg-gray-800 rounded-lg text-white">
+              <h2 className="text-xl font-semibold mb-2">已选择:</h2>
+              <p>{selectedAmount.toLocaleString()} 钻石</p>
+              <p>价格: USDT {selectedPrice.toFixed(2)}</p>
+            </div>
+          )}
+          {/* <DiamondsSelection
             data-plasmic-name={"diamondsSelection"}
             data-plasmic-override={overrides.diamondsSelection}
             className={classNames("__wab_instance", sty.diamondsSelection)}
-          />
+          /> */}
 
           <NextButton
             data-plasmic-name={"nextButton"}
