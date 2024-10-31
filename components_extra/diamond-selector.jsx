@@ -15,9 +15,9 @@ const options = [
 ];
 
 const diamondIconUrl =
-  'https://res.cloudinary.com/dff2gtpyx/image/upload/v1730191576/diamond_hh8dor.svg';
+  '../public/diamond.png';
 const chestImageUrl =
-  'https://res.cloudinary.com/dff2gtpyx/image/upload/v1730191576/Diamonds_Case_ad0q8k.png';
+  '../public/plasmic/free_fire_simulator/images/diamonds1.png';
 
 function DiamondSelector({ onSelect }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
