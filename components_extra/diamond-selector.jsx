@@ -62,14 +62,14 @@ function DiamondSelector({ onSelect }) {
                   {option.amount.toLocaleString()}
                 </span>
               </div>
-              <div className="relative w-full aspect-square mb-1">
+              {/* <div className="relative w-full aspect-square mb-1">
                 <Image
                   src="/plasmic/free_fire_simulator/images/diamonds1.png"
                   alt="宝箱"
                   fill
                   className="object-contain"
                 />
-              </div>
+              </div> */}
               <div className="bg-yellow-500 text-black font-bold py-1 px-2 rounded text-xs sm:text-sm">
                 USDT {option.price.toFixed(2)}
               </div>
