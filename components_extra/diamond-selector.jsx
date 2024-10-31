@@ -52,7 +52,7 @@ function DiamondSelector({ onSelect }) {
             <div className="grid grid-rows-[auto_1fr_auto] h-full">
               <div className="flex items-center justify-center mb-1">
                 <Image
-                  src="../public/diamond.png"
+                  src="/diamond.png"
                   alt="钻石"
                   width={16}
                   height={16}
@@ -64,7 +64,7 @@ function DiamondSelector({ onSelect }) {
               </div>
               <div className="relative w-full aspect-square mb-1">
                 <Image
-                  src="../public/plasmic/free_fire_simulator/images/diamonds1.png"
+                  src="/plasmic/free_fire_simulator/images/diamonds1.png"
                   alt="宝箱"
                   fill
                   className="object-contain"
