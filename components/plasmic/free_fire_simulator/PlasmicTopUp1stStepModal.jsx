@@ -79,23 +79,16 @@ function PlasmicTopUp1stStepModal__RenderFunc(props) {
   //**新增代码 */
   const [selectedAmount, setSelectedAmount] = React.useState(null);
   const [selectedPrice, setSelectedPrice] = React.useState(null);
-  const [error, setError] = React.useState(null);
 
-  const handleSelect = useCallback((amount, price) => {
+  const handleSelect = (amount, price) => {
     try {
       setSelectedAmount(amount);
       setSelectedPrice(price);
       console.log(`选择了 ${amount} 钻石，价格为 USDT ${price}`);
-      setError(null);
     } catch (err) {
       console.error('选择钻石时出错:', err);
-      setError('选择钻石时出现错误，请重试。');
     }
-  }, []);
-
-  if (error) {
-    return <div className="text-red-500">{error}</div>;
-  }
+  };
   //**结束 */
   return (
     <Stack__
